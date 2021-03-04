@@ -1,6 +1,9 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/user/user",
+    "pages/products/products" 
+
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -8,6 +11,30 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "北化文创平台",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar":{
+    "color":"#707070",
+    "selectedColor":"#1296db",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"images/home.png",
+        "selectedIconPath":"images/home_h.png"
+      },
+      {
+        "pagePath":"pages/user/user",
+        "text":"我的",
+        "iconPath":"images/user.png",
+        "selectedIconPath":"images/user_h.png"
+      },
+      {
+        "pagePath":"pages/products/products",
+        "text":"商品",
+        "iconPath":"images/user.png",
+        "selectedIconPath":"images/user_h.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
