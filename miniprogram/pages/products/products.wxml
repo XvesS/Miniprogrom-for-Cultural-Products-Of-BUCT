@@ -1,2 +1,1 @@
-<!--pages/products/products.wxml-->
-<text>pages/products/products.wxml</text>
+<view>我是商品分类</view>

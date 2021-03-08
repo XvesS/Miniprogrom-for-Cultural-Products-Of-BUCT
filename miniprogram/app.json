@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/user/user",
-    "pages/products/products" 
+    "pages/products/products" ,
+    "pages/user/user"
 
   ],
   "window": {
@@ -23,14 +23,14 @@
         "selectedIconPath":"images/home_h.png"
       },
       {
-        "pagePath":"pages/user/user",
-        "text":"我的",
-        "iconPath":"images/user.png",
-        "selectedIconPath":"images/user_h.png"
+        "pagePath":"pages/products/products",
+        "text":"分类",
+        "iconPath":"images/products.png",
+        "selectedIconPath":"images/products_h.png"
       },
       {
-        "pagePath":"pages/products/products",
-        "text":"商品",
+        "pagePath":"pages/user/user",
+        "text":"我的",
         "iconPath":"images/user.png",
         "selectedIconPath":"images/user_h.png"
       }
