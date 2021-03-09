@@ -4,8 +4,30 @@ Page({
    * 页面的初始数据
    */
   data: {
+    interval:5000,
+    duration:500,
+    imgUrls:[],
+    msgList:[]
   },
- 
+ getswiperData(){
+   wx.cloud.callFunction({
+     name:"get_swider_data"
+   }).then(res=>{
+    var data = res.result.data;
+    this.setData({
+      imgUrls:data
+    })
+   })
+ },
+ gettzData(){
+ },
+ getProductsRec(){
+   wx.cloud.callFunction({
+     name:'get_products_rec',
+   }).then(res=>{
+     
+   })
+ },
   search(value){
       return new Promise((resolve, reject) => {
         wx.cloud.callFunction({
@@ -33,6 +55,8 @@ Page({
     this.setData({
       search: this.search.bind(this)
   })
+    this.getswiperData()
+    //this.gettzData()
   },
 
   /**
