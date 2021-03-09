@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="top">
+    <image calss="logo" src="cloud://bhwc-7g15kpno7c4536bb.6268-bhwc-7g15kpno7c4536bb-1305139161/tempPic/logo.jpg"></image>
+    <view class="search">
+      <mp-searchbar ext-class="" placeholder="请输入商品名" bindselectresult="selectResult" search="{{search}}">
+      </mp-searchbar>
+    </view>
+  </view>
+
+  <view class="centre">
+    <view class="swp">
+    </view>
+    <view class="tzbar">
+    </view>
+  </view>
+
+  <view class="bottom">
+
+  </view>
+
+
+</view>
