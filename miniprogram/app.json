@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/products/products" ,
-    "pages/user/user"
+    "pages/user/user",
+    "pages/catagory/catagory"
 
   ],
   "window": {
@@ -23,7 +23,7 @@
         "selectedIconPath":"images/home_h.png"
       },
       {
-        "pagePath":"pages/products/products",
+        "pagePath":"pages/catagory/catagory",
         "text":"分类",
         "iconPath":"images/products.png",
         "selectedIconPath":"images/products_h.png"
