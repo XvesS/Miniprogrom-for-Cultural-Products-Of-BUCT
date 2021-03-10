@@ -7,7 +7,7 @@ Page({
     interval:5000,
     duration:500,
     imgUrls:[],
-    msgList:[]
+    jxrecList:[]
   },
  getswiperData(){
    wx.cloud.callFunction({
@@ -25,7 +25,11 @@ Page({
    wx.cloud.callFunction({
      name:'get_products_rec',
    }).then(res=>{
-     
+     var data = res.result.list;
+     //data.result[0].
+     this.setData({
+      jxrecList:data
+     })
    })
  },
   search(value){
@@ -57,6 +61,7 @@ Page({
   })
     this.getswiperData()
     //this.gettzData()
+    this.getProductsRec()
   },
 
   /**

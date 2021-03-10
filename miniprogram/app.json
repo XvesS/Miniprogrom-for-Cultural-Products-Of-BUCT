@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/catagory/catagory"
+    "pages/catagory/catagory",
+    "pages/shopcar/shopcar"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -26,6 +27,12 @@
         "text":"分类",
         "iconPath":"images/products.png",
         "selectedIconPath":"images/products_h.png"
+      },
+      {
+        "pagePath":"pages/shopcar/shopcar",
+        "text":"购物车",
+        "iconPath":"images/shopcar.png",
+        "selectedIconPath":"images/shopcar_h.png"
       },
       {
         "pagePath":"pages/user/user",

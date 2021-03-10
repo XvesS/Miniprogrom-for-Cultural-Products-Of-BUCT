@@ -29,9 +29,9 @@
     <view>
       <view>【精选推荐】</view>
       <view>
-        <view wx:for="{{4}}">
-            <image src="../../images/products_h.png"></image>
-            <view></view>
+        <view wx:for="{{jxrecList}}" wx:key="index">
+            <image src="{{item.result[0].products_pic[0]}}"></image>
+            <view>{{item.result[0].products_describe}}</view>
         </view>
       </view>
     </view>
