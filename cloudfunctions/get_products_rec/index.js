@@ -6,11 +6,13 @@ const db = cloud.database();
 const _ = db.command;
 // 云函数入口函数
 exports.main = async (event, context) => {
+      var type = event.type;
         return await db.collection('rec_table')
         .aggregate()
         .match({
-          rec_class:'精品'
-        }).lookup({
+          rec_class:type
+        })
+        .lookup({
           from:'products_table',
           localField:'products_id',
           foreignField:'_id',

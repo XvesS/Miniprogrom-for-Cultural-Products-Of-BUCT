@@ -1,1 +1,28 @@
-/* pages/user/user.wxss */
+.header{
+  /* border:1px solid red; */
+  display: flex;
+  height: 18vh;
+  background-color: #F5F5F5;
+  box-sizing: border-box;
+  background-image: url("https://6268-bhwc-7g15kpno7c4536bb-1305139161.tcb.qcloud.la/tempPic/back.png?sign=ee004289142ee30a2e2995440bd372b4&t=1615448682");
+}
+
+.pic{
+  /* border:1px solid red; */
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+}
+.pic image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.des{
+  /* border:1px solid red; */
+  padding-left: 3px;
+  padding-top: 25px;
+  font-size: 37rpx;
+  letter-spacing: 12rpx;
+}

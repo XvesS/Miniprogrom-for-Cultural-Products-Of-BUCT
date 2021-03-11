@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="logo">
+    <image src="../../images/logo.jpg"/>
+  </view>
+  <view class="info">授权之后进行后续操作</view>
+  <view class="btnGroup">
+    <button  type="primary" open-type="getUserInfo" bindgetuserinfo="login">
+      确认授权
+    </button>
+    <button type="primary" plain bindtap="nologin">
+      暂不授权
+    </button>
+  </view>
+</view>

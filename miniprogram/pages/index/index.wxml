@@ -27,17 +27,27 @@
   <view class="bottom">
 
     <view>
-      <view>【精选推荐】</view>
+      <view>【精选新品】</view>
       <view>
         <view wx:for="{{jxrecList}}" wx:key="index">
+          <navigator url="">
             <image src="{{item.result[0].products_pic[0]}}"></image>
             <view>{{item.result[0].products_describe}}</view>
+          </navigator>
         </view>
       </view>
     </view>
 
     <view>
       <view>【热门产品】</view>
+      <view>
+        <view wx:for="{{xprecList}}" wx:key="index">
+          <navigator url="">
+            <image src="{{item.result[0].products_pic[0]}}"></image>
+            <view>{{item.result[0].products_describe}}</view>
+          </navigator>
+        </view>
+      </view>
     </view>
 
   </view>

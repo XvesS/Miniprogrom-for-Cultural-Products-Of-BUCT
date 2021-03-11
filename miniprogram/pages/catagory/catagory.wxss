@@ -2,6 +2,7 @@
 
 page,.main{
   height: 100%;
+  
 }
 .categroy-left{
   background-color: #fff;

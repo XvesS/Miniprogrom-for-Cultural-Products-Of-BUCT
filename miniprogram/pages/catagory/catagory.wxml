@@ -1,4 +1,5 @@
 <view class="main">
+    
     <view class="categroy-left">
         <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
             bindtap="switchTab"

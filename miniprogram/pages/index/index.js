@@ -7,29 +7,39 @@ Page({
     interval:5000,
     duration:500,
     imgUrls:[],
-    jxrecList:[]
+    jxrecList:[],
+    xprecList:[]
   },
  getswiperData(){
    wx.cloud.callFunction({
      name:"get_swider_data"
    }).then(res=>{
     var data = res.result.data;
-    this.setData({
-      imgUrls:data
-    })
+        this.setData({
+          imgUrls:data
+        })
    })
  },
  gettzData(){
  },
- getProductsRec(){
+ getProductsRec(type='精品'){
    wx.cloud.callFunction({
      name:'get_products_rec',
+     data:{
+       type
+     }
    }).then(res=>{
      var data = res.result.list;
      //data.result[0].
-     this.setData({
-      jxrecList:data
-     })
+     if(type == "精品"){
+        this.setData({
+        jxrecList:data
+        })
+     }else{
+      this.setData({
+        xprecList:data
+      })
+     }
    })
  },
   search(value){
@@ -61,7 +71,8 @@ Page({
   })
     this.getswiperData()
     //this.gettzData()
-    this.getProductsRec()
+    this.getProductsRec();
+    this.getProductsRec("新品");
   },
 
   /**
