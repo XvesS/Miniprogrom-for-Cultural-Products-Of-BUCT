@@ -1,56 +1,49 @@
 <view class="container">
-  <view class="top">
-    <image calss="logo" src="cloud://bhwc-7g15kpno7c4536bb.6268-bhwc-7g15kpno7c4536bb-1305139161/tempPic/logo.jpg"></image>
-    <view class="search">
-      <mp-searchbar ext-class="" placeholder="请输入商品名" bindselectresult="selectResult" search="{{search}}">
-      </mp-searchbar>
-    </view>
-  </view>
-
-  <view class="centre">
-    <view class="swp">
-      <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" 
-      duration="{{duration}}" circular="true">
-        <block wx:for="{{imgUrls}}" wx:key="index">
-          <navigator>
-            <swiper-item>
-                <image src="{{item.products_pic[0]}}" class="" width="100%"/>
-            </swiper-item>
-          </navigator>
-        </block>
+  <view class="swiper">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
+      <block wx:for="{{}}">
+      <navigator>
+        <swiper-item>
+          <image src="{{}}" mode="aspectFill"></image>
+        </swiper-item>
+      </navigator>
+    </block>
     </swiper>
-    </view>
-    <view class="tzbar">
-    </view>
   </view>
-
+  <view class="serchbox">
+    <navigator url="../search/search">
+    <view class="iptbox">
+      <view class="text">搜索</view>
+      <image src="../../images/搜索.png"/>
+    </view>
+  </navigator>
+  </view>
   <view class="bottom">
-
-    <view>
-      <view>【精选新品】</view>
-      <view>
-        <view wx:for="{{jxrecList}}" wx:key="index">
-          <navigator url="">
-            <image src="{{item.result[0].products_pic[0]}}"></image>
-            <view>{{item.result[0].products_describe}}</view>
-          </navigator>
+    <view class="rec_text">上新啦！</view>
+    <view class="pic_group">
+      <view class="pic_box" wx:for="{{4}}">
+        <navigator url="../detail/detail">
+        <image mode="aspectFill"></image>
+        <view class="itro">说明说啊决赛晒好惨啊啊惭愧牛仔裤v查看</view>
+        <view class="bbtm">
+          <view>￥9.99</view>
+          <image src="../../images/购物车.png"/>
         </view>
+      </navigator>
       </view>
     </view>
-
-    <view>
-      <view>【热门产品】</view>
-      <view>
-        <view wx:for="{{xprecList}}" wx:key="index">
-          <navigator url="">
-            <image src="{{item.result[0].products_pic[0]}}"></image>
-            <view>{{item.result[0].products_describe}}</view>
-          </navigator>
+    <view class="rec_text_2">最热单品</view>
+    <view class="pic_group">
+      <view class="pic_box" wx:for="{{4}}">
+        <navigator url="../detail/detail">
+        <image mode="aspectFill"></image>
+        <view class="itro">说明说啊决赛晒好惨啊啊惭愧牛仔裤v查看</view>
+        <view class="bbtm">
+          <view>￥9.99</view>
+          <image src="../../images/购物车.png"/>
         </view>
+      </navigator>
       </view>
     </view>
-
   </view>
-
-
 </view>
