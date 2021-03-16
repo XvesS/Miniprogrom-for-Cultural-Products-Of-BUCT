@@ -1,28 +1,21 @@
-<view class="main">
-    
-    <view class="categroy-left">
-        <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
-            bindtap="switchTab"
-            class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view>
-    </view>
-    <scroll-view class="categroy-right" scroll-y="{{isScroll}}" scroll-into-view="{{toView}}" scroll-with-animation="true">
-         <block wx:for="{{detail}}" wx:for-index wx:key="idx">
-            <view id="{{item.id}}" class="cate-box">
-                <view class="cate-banner">
-                    <image src="{{item.banner}}"></image>
-                </view>
-                <view class="cate-title">
-                    <text>{{item.cate}}</text>
-                </view>
-                <view class="product">
-                    <view class="product-list" wx:for="{{item.detail}}" wx:key="index" wx:for-item="val">
-                        <navigator url="../list/list">
-                            <image src="{{val.thumb}}"></image>
-                            <view class="classname"><text>{{val.name}}</text></view>
-                        </navigator>
-                    </view>
-                </view>
-            </view>
-        </block> 
+<view class="container">
+    <view class="catagory-up">
+    <scroll-view scroll-x="true" class="scr-box" scroll-left="{{scrollLeft}}" bindscroll="scrollMove" scroll-with-animation="true" >
+        <view wx:for="{{10}}" class="scr-item-{{index==curpos?'on':''}}" id="scroll-item-{{index}}" bindtap="selectItem" data-index="{{index}}">笔记本</view>
     </scroll-view>
+    </view>
+    <view class="catagory-down">
+    <scroll-view scroll-y="true" class="scr-box-d" enable-flex="true">
+        <view class="pic_box" wx:for="{{20}}">
+        <navigator url="../detail/detail">
+        <image mode="aspectFill"></image>
+        <view class="itro">说明说啊决赛晒好惨啊啊惭愧牛仔裤v查看</view>
+        <view class="bbtm">
+          <view>￥9.99</view>
+          <image src="../../images/购物车.png"/>
+        </view>
+      </navigator>
+      </view>
+    </scroll-view>
+    </view>
 </view>
