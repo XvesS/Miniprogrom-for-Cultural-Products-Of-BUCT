@@ -1,2 +1,15 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="container-detail">
+  <view class="pic-show">
+    <swiper>
+      <block>
+        <swiper-item>
+          <image></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  
+  <view>
+    
+  </view>
+</view>

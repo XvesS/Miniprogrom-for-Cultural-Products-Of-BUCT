@@ -81,6 +81,11 @@
           "pathName": "pages/user/user",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "scene": null
         }
       ]
     }
