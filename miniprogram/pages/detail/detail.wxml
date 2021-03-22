@@ -10,6 +10,7 @@
   </view>
   
   <view>
-    
+    <view wx:if="{{true}}">woshi</view>
+    <view wx:if="{{false}}">kkkk</view>
   </view>
 </view>

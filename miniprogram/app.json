@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/detail/detail",
     "pages/user/user",
     "pages/catagory/catagory",
     "pages/shopcar/shopcar",
@@ -9,7 +10,6 @@
     "pages/adress/adress",
     "pages/shop/shops",
     "pages/draft/draft",
-    "pages/detail/detail",
     "pages/search/search"
   ],
   "window": {
