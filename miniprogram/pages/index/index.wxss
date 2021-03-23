@@ -120,7 +120,7 @@ page{
   width: 50rpx;
   border-radius: 50%;
   background-color: #E8110F;
-  margin-left: 24vw;
+  margin-left: 22vw;
 }
 .bbtm view{
   margin-left: 3vw;
