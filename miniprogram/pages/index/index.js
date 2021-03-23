@@ -1,11 +1,19 @@
 Page({
   data: {
+    //轮播图
+    swiperList:[]
   },
 
   onLoad: function (options) {
-
+    wx-wx.request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
+      success: (result) => {
+        this.setData({
+          swiperList:result.data.message
+        })
+      },
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
