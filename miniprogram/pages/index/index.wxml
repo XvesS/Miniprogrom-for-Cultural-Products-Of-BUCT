@@ -24,12 +24,12 @@
   <view class="bottom">
     <view class="rec_text">上新啦！</view>
     <view class="pic_group">
-      <view class="pic_box" wx:for="{{4}}">
+      <view class="pic_box" wx:for="{{dataobj}}">
         <navigator url="../detail/detail">
-        <image mode="aspectFill"></image>
-        <view class="itro">说明说啊决赛晒好惨啊啊惭愧牛仔裤v查看</view>
+        <image mode="aspectFill" src="{{item.products_pic}}"></image>
+        <view  class="itro" >{{item.products_name}}</view>
         <view class="bbtm">
-          <view>￥9.99</view>
+          <view>{{item.products_price}}</view>
           <image src="../../images/购物车.png"/>
         </view>
       </navigator>

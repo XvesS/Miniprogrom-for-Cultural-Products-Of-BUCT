@@ -1,7 +1,8 @@
 Page({
   data: {
     //轮播图
-    swiperList:[]
+    swiperList:[],
+    dataobj:""
   },
   onLoad: function (options) {
     wx-wx.request({
@@ -12,6 +13,14 @@ Page({
         })
       },
     })
+    wx.cloud.callFunction({
+      name:"get_product_price"
+    }).then(res=>{
+      this.setData({
+        dataobj:res.result.data
+      })
+    })
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
