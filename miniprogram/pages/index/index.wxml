@@ -29,7 +29,7 @@
         <image mode="aspectFill" src="{{item.products_pic}}"></image>
         <view  class="itro" >{{item.products_name}}</view>
         <view class="bbtm">
-          <view>{{item.products_price}}</view>
+          <view>￥{{item.products_price}}</view>
           <image src="../../images/购物车.png"/>
         </view>
       </navigator>
