@@ -100,10 +100,11 @@ page{
   width: 50rpx;
   border-radius: 50%;
   background-color: #E8110F;
-  margin-left: 24vw;
+  margin-left: 15vw;
 }
 .bbtm view{
   margin-left: 3vw;
   color: #E8110F;
   font-weight: 800;
+  width:20vw;
 }

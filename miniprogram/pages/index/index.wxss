@@ -124,10 +124,12 @@ page{
   width: 50rpx;
   border-radius: 50%;
   background-color: #E8110F;
-  margin-left: 22vw;
+  margin-left: 17vw;
 }
 .bbtm view{
-  margin-left: 3vw;
+  /* border:1px solid red; */
+  margin-left: 1vw;
   color: red;
   font-weight: 800;
+  width:20vw;
 }
