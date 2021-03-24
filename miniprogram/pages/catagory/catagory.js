@@ -3,7 +3,10 @@ Page({
       curpos:0,//固定
       moveParams: {
         scrollLeft: 0
-      }//固定
+      },//固定
+      catagoryTopList:['全部商品','照片','明信片','服饰','文具','实用'],
+      catagoryProducts:[],
+      pagesNum:0,
   },
 
   getRect(ele) { 
@@ -47,8 +50,54 @@ Page({
       curpos:e.currentTarget.dataset.index
     })
     this.getRect('#' + ele);//以上代码不要动
-  },
 
+    this.setData({
+      pagesNum:0,
+      catagoryProducts:[]
+    })
+    wx.cloud.callFunction({
+      name:"get_productsByType",
+      data:{
+        type:this.data.catagoryTopList[e.currentTarget.dataset.index],
+        num:this.data.pagesNum*10
+      }
+    }).then(res=>{
+      var data = res.result.data;
+      this.setData({
+        catagoryProducts:data
+      })
+    })
+  },
+  onLoad(){
+    wx.cloud.callFunction({
+      name:"get_productsByType",
+      data:{
+        type:this.data.catagoryTopList[0],
+        num:this.data.pagesNum*10
+      }
+    }).then(res=>{
+      var data = res.result.data;
+      this.setData({
+        catagoryProducts:data
+      })
+    })
+  },
+  onReachBottom: function () {
+    var num = this.data.pagesNum+1;
+    this.setData({
+      pagesNum:num
+    })
+    wx.cloud.callFunction({
+      name:'get_productsByType',
+      num:num*10
+    }).then(res=>{
+      var data = res.result.data;
+      var newList = this.data.catagoryProducts.concat(data);
+      this.setData({
+        catagoryProducts:newList
+      })
+    })
+  },
   onReady(){
       
   },

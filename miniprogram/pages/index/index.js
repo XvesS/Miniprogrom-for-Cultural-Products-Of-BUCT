@@ -3,7 +3,6 @@ Page({
     //轮播图
     swiperList:[]
   },
-
   onLoad: function (options) {
     wx-wx.request({
       url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
