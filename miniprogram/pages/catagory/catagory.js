@@ -4,7 +4,7 @@ Page({
       moveParams: {
         scrollLeft: 0
       },//固定
-      catagoryTopList:['全部商品','照片','明信片','服饰','文具','实用'],
+      catagoryTopList:['全部商品','服饰','日用品','文具','大鹅周边'],
       catagoryProducts:[],
       pagesNum:0,
   },
