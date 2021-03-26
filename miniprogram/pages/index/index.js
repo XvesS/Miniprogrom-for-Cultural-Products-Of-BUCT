@@ -14,10 +14,10 @@ Page({
       },
     })
     wx.cloud.callFunction({
-      name:"get_product_price"
+      name:"get_products_new"
     }).then(res=>{
       this.setData({
-        dataobj:res.result.data
+       dataobj:res.result.list
       })
     })
 
