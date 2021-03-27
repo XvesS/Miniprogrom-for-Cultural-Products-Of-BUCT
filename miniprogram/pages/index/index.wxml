@@ -1,13 +1,10 @@
 <view class="container">
   <view class="swiper">
     <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
-      <block 
-      wx:for="{{swiperList}}"
-      wx:key="goods_id"
-      >
+      <block wx:for="{{dataobj}}">
       <navigator>
         <swiper-item>
-          <image src="{{item.image_src}}" mode="aspectFill"></image>
+          <image src="{{item.products_pic}}" mode="aspectFill"></image>
         </swiper-item>
       </navigator>
     </block>
@@ -37,16 +34,16 @@
     </view>
     <view class="rec_text_2">最热单品</view>
     <view class="pic_group">
-      <view class="pic_box" wx:for="{{4}}">
+      <view class="pic_box" wx:for="{{hot}}">
         <navigator url="../detail/detail">
-        <image mode="aspectFill"></image>
-        <view class="itro">说明说啊决赛晒好惨啊啊惭愧牛仔裤v查看</view>
+        <image mode="aspectFill" src="{{item.products_pic}}"></image>
+        <view class="itro">{{item.products_name}}</view>
         <view class="bbtm">
-          <view>￥9.99</view>
+          <view>￥{{item.products_price}}</view>
           <image src="../../images/购物车.png"/>
         </view>
       </navigator>
       </view>
     </view>
   </view>
-</view>ss
+</view>
