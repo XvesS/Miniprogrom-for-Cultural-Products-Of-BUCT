@@ -10,7 +10,8 @@
     "pages/adress/adress",
     "pages/shop/shops",
     "pages/draft/draft",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/editproduct/editproduct"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -53,5 +54,13 @@
     "weui": true
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-field": "@vant/weapp/field/index"
+  }
 }

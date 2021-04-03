@@ -1,0 +1,92 @@
+<view class="main">
+  <!-- 图片展示 -->
+  <van-divider
+      contentPosition="center"
+      customStyle="color: #1989fa; border-color: #1989fa; font-size: 10px;"
+    >
+      商品图片
+    </van-divider>
+    <view class="top">
+      <view class="contain" wx:for="{{4}}">
+        <van-image width="100" height="100"  fit="cover" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+        <view class="dele">x</view>
+      </view>
+      <view class="add">+</view>
+     </view>
+     <van-divider
+      contentPosition="center"
+      customStyle="color: #1989fa; border-color: #1989fa; font-size: 10px;"
+    >
+      基本信息
+    </van-divider>
+    <van-cell-group>
+        <van-field
+          value="{{}}"
+          clearable
+          label="商品名"
+          placeholder="{{}}"
+          disabled="{{isdisable}}"
+          >
+          </van-field>
+          <van-field
+          value="{{}}"
+          label="商品描述"
+          type="textarea"
+          autosize
+          placeholder="{{}}"
+          disabled="{{isdisable}}"
+        >
+        </van-field>
+        <van-field
+          value="{{}}"
+          label="商品价格"
+          placeholder="{{}}"
+          disabled="{{isdisable}}"
+        >
+        </van-field>
+        <van-field
+          value="{{}}"
+          label="商品库存"
+          placeholder="{{}}"
+          disabled="{{isdisable}}"
+        >
+        </van-field>
+        
+        <van-field
+          value="{{}}"
+          label="商品种类"
+          placeholder="{{}}"
+          disabled="{{isdisable}}"
+        >
+        </van-field>
+        
+        <van-field
+          value="{{}}"
+          label="商品规格"
+          placeholder="点击修改"
+          readonly
+          icon="cloud://bhwc-7g15kpno7c4536bb.6268-bhwc-7g15kpno7c4536bb-1305139161/tempPic/xiugai.png"
+          bind:click-icon="clikthis"
+        />
+        <van-popup
+          show="{{showpop}}"
+          closeable
+          round
+          title="商品规格"
+          close-icon="close"
+          position="bottom"
+          custom-style="height: 60%"
+          bind:close="onClose"
+        >
+        <view class="ctn">
+          <view wx:for="{{4}}" >
+            <input type="text" placeholder="规格名"  data-index="{{index}} "bindinput="{{handleGUIge}}" class="one"/>
+            <input type="number" placeholder="库存" bindinput="{{handleGUIgenum}}" class="two"/>
+            <van-divider/>
+          </view>
+        </view>
+        </van-popup>
+      </van-cell-group>
+      <van-button type="primary" size="primary"  custom-class="btn" bind:click="tofix">{{info}}</van-button>
+      <van-button type="primary" size="primary"  custom-class="btn">提交</van-button>
+</view>
