@@ -1,0 +1,7 @@
+/* pages/changeadress/changeadress.wxss */
+.address-phonenum{
+  text-align: right;
+}
+.defult-address{
+color: orangered;
+}

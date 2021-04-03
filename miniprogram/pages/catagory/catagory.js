@@ -3,7 +3,24 @@ Page({
       curpos:0,//固定
       moveParams: {
         scrollLeft: 0
-      }//固定
+      },//固定
+      array: [{
+        message: '大鹅周边',
+        kind:'大鹅周边'
+      }, {
+        message: '文具',
+        kind:'文具'
+      }, {
+        message: '服饰',
+        kind:'服饰'
+      }, {
+        message: '日用品',
+        kind:'日用品'
+      }],
+kind:[{
+
+  
+}]
   },
 
   getRect(ele) { 
@@ -52,4 +69,5 @@ Page({
   onReady(){
       
   },
+
 })

@@ -1,0 +1,14 @@
+<!--pages/addmanager/addmanager.wxml-->
+<view class="add">
+  <view class="addinfor">
+
+    手机号:
+    <input bindinput="addNameInput" type="text" placeholder="请输入管理员手机号码"/>
+     密码:
+    <input bindinput="EventHandle" type="password" placeholder="请设置账户密码"/>
+     确认密码:
+    <input bindinput="addPasswordInput" type="password" placeholder="请密码保持一致"/>
+
+    <button bindtap="register">添加账户</button>
+  </view>
+</view>

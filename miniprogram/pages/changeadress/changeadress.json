@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "backgroundColor": "#DADCDB",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#06b3ad",
+  "navigationBarTitleText": "地址管理",
+  "navigationBarTextStyle": "black"
+}

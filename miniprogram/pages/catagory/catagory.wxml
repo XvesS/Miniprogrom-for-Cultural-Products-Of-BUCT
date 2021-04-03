@@ -1,7 +1,9 @@
 <view class="container">
     <view class="catagory-up">
     <scroll-view scroll-x="true" class="scr-box" scroll-left="{{scrollLeft}}" bindscroll="scrollMove" scroll-with-animation="true" >
-        <view wx:for="{{10}}" class="scr-item-{{index==curpos?'on':''}}" id="scroll-item-{{index}}" bindtap="selectItem" data-index="{{index}}">笔记本</view>
+        <view wx:for="{{array}}" class="scr-item-{{index==curpos?'on':''}}"id="scroll-item-{{index}}" bindtap="selectItem" data-index="{{index}}" >
+      {{item.message}}
+  </view>
     </scroll-view>
     </view>
     <view class="catagory-down">
@@ -9,7 +11,7 @@
         <view class="pic_box" wx:for="{{20}}">
         <navigator url="../detail/detail">
         <image mode="aspectFill"></image>
-        <view class="itro">说明说啊决赛晒好惨啊啊惭愧牛仔裤v查看</view>
+        <view class="itro">{{item.kind}}</view>
         <view class="bbtm">
           <view>￥9.99</view>
           <image src="../../images/购物车.png"/>
@@ -18,4 +20,4 @@
       </view>
     </scroll-view>
     </view>
-</view>
+  </view>

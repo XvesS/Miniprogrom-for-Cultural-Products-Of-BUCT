@@ -1,66 +1,66 @@
 // pages/order/order.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+      curpos:0,//固定
+      moveParams: {
+        scrollLeft: 0
+      },//固定
+      array: [{
+        message: '待付款',
+      }, {
+        message: '待发货'
+      }, {
+        message: '待收货'
+      }, {
+        message: '已完成'
+      }],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  getRect(ele) { 
+  //获取点击元素的信息,ele为传入的id
+    var that = this;
+    //节点查询
+    wx.createSelectorQuery().select(ele).boundingClientRect(function (rect) {
+      //console.log(rect)
+      let moveParams = that.data.moveParams;
+      moveParams.subLeft = rect.left;
+      moveParams.subHalfWidth = rect.width / 2;
+      moveParams.screenHalfWidth=wx.getSystemInfoSync().windowWidth/2;
+      that.moveTo();
+    }).exec()
+  },
+  moveTo: function () {
+    let subLeft = this.data.moveParams.subLeft;
+    let screenHalfWidth = this.data.moveParams.screenHalfWidth;
+    let subHalfWidth = this.data.moveParams.subHalfWidth;
+    let scrollLeft = this.data.moveParams.scrollLeft;
 
+    let distance = subLeft - screenHalfWidth + subHalfWidth;
+
+    scrollLeft = scrollLeft + distance;
+
+    this.setData({
+      scrollLeft: scrollLeft
+    })
+  },
+  scrollMove(e) {
+    let moveParams = this.data.moveParams;
+    moveParams.scrollLeft = e.detail.scrollLeft;
+    this.setData({
+      moveParams: moveParams
+    })
+  },
+  //选择项目
+  selectItem: function (e) {
+    let ele = 'scroll-item-' + e.currentTarget.dataset.index;
+    this.setData({
+      curpos:e.currentTarget.dataset.index
+    })
+    this.getRect('#' + ele);//以上代码不要动
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onReady(){
+      
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

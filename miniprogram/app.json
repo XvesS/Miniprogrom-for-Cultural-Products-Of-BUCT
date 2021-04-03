@@ -10,12 +10,28 @@
     "pages/adress/adress",
     "pages/shop/shops",
     "pages/draft/draft",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/goodlist/goodlist",
+    "pages/edit/edit",
+    "pages/Shopapply/shopapply",
+    "pages/collect/collect",
+    "pages/contribution/contribution",
+    "pages/manager/manager",
+    "pages/addmanager/addmanager",
+    "pages/shopmanage/shopmanage",
+    "pages/conmanage/conmanage",
+    "pages/merchant/merchant",
+    "pages/logon/logon",
+    "pages/client/client",
+    "pages/loge/loge",
+    "pages/changeadress/changeadress",
+    "pages/myshop/myshop",
+    "pages/charge/charge"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#DADCDB",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#06b3ad",
     "navigationBarTitleText": "北化文创平台",
     "navigationBarTextStyle": "black"
   },
@@ -52,6 +68,6 @@
   "useExtendedLib":{
     "weui": true
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
+ 
 }
