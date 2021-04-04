@@ -1,4 +1,5 @@
 {
+
   "setting": {},
   "condition": {
     "plugin": {
@@ -55,6 +56,9 @@
           "scene": null
         },
         {
+          "name": "pages/adress/adress",
+          "pathName": "pages/adress/adress",
+
           "name": "pages/shop/shops",
           "pathName": "pages/shop/shops",
           "query": "",
