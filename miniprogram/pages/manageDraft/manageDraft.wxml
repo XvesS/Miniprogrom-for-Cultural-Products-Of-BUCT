@@ -1,0 +1,30 @@
+<van-tabs active="{{ 0 }}" bind:change="onChange">
+  <van-tab title="稿件申请">
+    <van-card wx:for="{{3}}">
+      <van-image slot="thumb" width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg"  fit="cover" image-class="jh"/>
+      <view slot="title" class="tt">张三的提交的稿件</view>
+      <view slot="desc" class="desc">帅的人提交的稿件</view>
+      <view slot="footer">
+        <van-button size="mini" type="primary">通过</van-button>
+        <van-button size="mini" type="danger">拒绝</van-button>
+      </view>
+    </van-card>
+  </van-tab>
+  <van-tab title="全部稿件">
+    <van-search
+      value="{{value}}"
+      placeholder="请输入稿件名"
+      show-action
+      bind:search="onSearch"
+    />
+    <van-swipe-cell  name="jjj" right-width="{{65}}" async-close bind:close="onClose">
+          <van-card thumb="https://img.yzcdn.cn/vant/cat.jpeg" thumb-mode="aspectFill">
+            <view slot="title" class="tlt">张三</view>
+            <view slot="desc" class="des">帅的人运气都不会差</view>
+            <!-- <view slot="tags" class="tags">管理员</view> -->
+          </van-card>
+          <view slot="right">下架</view>
+        </van-swipe-cell>
+  </van-tab>
+</van-tabs>
+

@@ -1,0 +1,8 @@
+.st{
+  /* border:1px solid red; */
+  width: 200rpx;
+  margin-left: 10px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+

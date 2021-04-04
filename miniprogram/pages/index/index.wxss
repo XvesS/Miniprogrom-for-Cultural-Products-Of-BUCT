@@ -18,20 +18,24 @@ page{
   width: 100%;
 }
 .serchbox{
-  /* margin-top: 10rpx; */
+  /* margin-top: 10px; */
   padding-top: 10rpx;
   /* border:1px solid green; */
   height: 90rpx;
   width: 100%;
   background-color:#e4e7e9;
+  box-sizing: border-box;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 .iptbox{
-  width: 95%;
+  width: 100%;
   /* border:1px solid red; */
-  height: 80%;
-
-  margin-top:8rpx;
-  margin-left:2.5vw;
+  height: 100%;
+  box-sizing: border-box;
+  /* margin-top:1rpx; */
+  /* margin-left:1vw; */
   border-radius: 32rpx;
   background-color: #fff;
   display: flex;
@@ -120,10 +124,12 @@ page{
   width: 50rpx;
   border-radius: 50%;
   background-color: #E8110F;
-  margin-left: 22vw;
+  margin-left: 17vw;
 }
 .bbtm view{
-  margin-left: 3vw;
+  /* border:1px solid red; */
+  margin-left: 1vw;
   color: red;
   font-weight: 800;
+  width:20vw;
 }

@@ -1,1 +1,25 @@
-/* pages/shop/shops.wxss */
+.insert{
+  display: flex;
+  flex-direction: row;
+}
+.insert view{
+  color:red;
+  border:1px solid red;
+  border-radius: 7px;
+  width: 58rpx;
+  text-align: center;
+  margin-left: 10rpx;
+}
+.classfication{
+  height: 20vh;
+  align-items: center;
+  padding-left: 130px;
+  padding-top: 20px;
+}
+.exbox{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  border:1px solid red;
+}
