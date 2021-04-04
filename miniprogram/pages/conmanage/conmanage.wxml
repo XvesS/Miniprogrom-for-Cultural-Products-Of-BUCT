@@ -1,0 +1,12 @@
+<!--pages/conmanage/conmanage.wxml-->
+<view class="container">
+    <view class="catagory-up">
+    <scroll-view scroll-x="true" class="scr-box" scroll-left="{{scrollLeft}}" bindscroll="scrollMove" scroll-with-animation="true" >
+        <view wx:for="{{array}}" class="scr-item-{{index==curpos?'on':''}}"id="scroll-item-{{index}}" bindtap="selectItem" data-index="{{index}}" >
+      {{item.message}}
+    </view>
+    </scroll-view>
+    </view>
+</view>
+<text>pages/conmanage/conmanage.wxml</text>
+审核界面：待审核，已审核（通过，未通过）

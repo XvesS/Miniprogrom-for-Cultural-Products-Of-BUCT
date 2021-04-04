@@ -10,12 +10,33 @@
     "pages/adress/adress",
     "pages/shop/shops",
     "pages/draft/draft",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/goodlist/goodlist",
+    "pages/edit/edit",
+    "pages/Shopapply/shopapply",
+    "pages/collect/collect",
+    "pages/contribution/contribution",
+    "pages/manager/manager",
+    "pages/addmanager/addmanager",
+    "pages/shopmanage/shopmanage",
+    "pages/conmanage/conmanage",
+    "pages/merchant/merchant",
+    "pages/logon/logon",
+    "pages/client/client",
+    "pages/loge/loge",
+    "pages/changeadress/changeadress",
+    "pages/myshop/myshop",
+    "pages/charge/charge"
+    "pages/editproduct/editproduct",
+    "pages/admin/admin",
+    "pages/Addadmin/Addadmin",
+    "pages/manageShop/manageShop",
+    "pages/manageDraft/manageDraft"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#DADCDB",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#06b3ad",
     "navigationBarTitleText": "北化文创平台",
     "navigationBarTextStyle": "black"
   },
@@ -53,5 +74,23 @@
     "weui": true
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  }
 }

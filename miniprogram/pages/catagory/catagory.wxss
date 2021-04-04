@@ -50,10 +50,10 @@ page{
   text-align: center;
   padding-top: 1.3vh;
   font-size: 14px;
-  color:#FD7013;
+  color:rgb(32, 67, 95);
   font-weight: 600;
   letter-spacing: 4rpx;
-  border-bottom: 2px solid #FD7013;
+  border-bottom:rgb(140, 183, 218);
   /* border:1px solid green; */
 }
 .scr-box-d{
@@ -106,5 +106,29 @@ page{
   margin-left: 3vw;
   color: #E8110F;
   font-weight: 800;
-  width:20vw;
+}
+.category-item{
+  height: 50px;
+  line-height: 50px;
+  border-bottom:1px solid #ddd;
+}
+.right_line{
+  height: 1px;
+  width: 100%;
+  background-color: #F5F5F5;
+  position: absolute;
+  bottom: 0px;
+}
+.right_list_item{
+  height: 90px;
+  width: 100%;
+  position: relative;
+  background-color: white;
+}  
+.right_list_style{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 75px;
+  background-color: #F5F5F5;
 }

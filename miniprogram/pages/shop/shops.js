@@ -1,13 +1,37 @@
 // pages/shop/shops.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    showclass:false,
+    result:'',
+    fileList:''
   },
-
+  onChange(event){
+    this.setData({
+      result:event.detail
+    })
+  },
+  onclickplus(){
+    var name = 'guige'+(this.data.numGUIge.length+1);
+    var newlist = this.data.numGUIge.concat(name);
+    this.setData({
+      numGUIge:newlist
+    })
+  },
+  onchoose(){
+      this.setData({
+        showclass:true
+      })
+  },
+  onClose(){
+    this.setData({
+      showclass:false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

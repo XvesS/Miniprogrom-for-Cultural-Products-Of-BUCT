@@ -1,0 +1,23 @@
+<!--pages/logon/logon.wxml-->
+<view class="text1">
+<navigator url="../../pages/manager/manager">
+ <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">管理员</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+<navigator url="../../pages/merchant/merchant">
+  <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">商户</text>
+        <text class="b-right"> > </text>
+      </button>
+ </navigator>
+<navigator url="../../pages/client/client">
+  <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">普通客户</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+    </view>
+
+

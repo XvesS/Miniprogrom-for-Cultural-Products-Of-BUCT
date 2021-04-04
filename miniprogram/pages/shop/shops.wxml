@@ -1,2 +1,120 @@
-<!--pages/shop/shops.wxml-->
-<text>pages/shop/shops.wxml</text>
+<view class="main">
+  <van-tabs active="{{2}}" bind:change="onChange" sticky>
+  <van-tab title="已上架" dot>
+    <block wx:for="{{10}}">
+      <van-card
+        num="20"
+        tag="NEW"
+        origin-price="18"
+        price="10.00"
+        desc="黑猫警长特别版"
+        title="小黑"
+        thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+        thumb-mode="aspectFill"
+        lazy-load
+        >
+        <view slot="tags" class="insert">
+          <view>黑白</view>
+          <view>可爱</view>
+        </view>
+      </van-card>
+    </block>
+  </van-tab>
+  <van-tab title="已下架">
+    <block wx:for="{{10}}">
+      <van-card
+        num="20"
+        tag="NEW"
+        origin-price="18"
+        price="10.00"
+        desc="黑猫警长特别版"
+        title="小黑"
+        thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+        thumb-mode="aspectFill"
+        lazy-load
+        >
+        <view slot="tags" class="insert">
+          <view>黑白</view>
+          <view>可爱</view>
+        </view>
+      </van-card>
+    </block>
+  </van-tab>
+  <van-tab title="上新">
+    <van-cell-group>
+      <van-field
+        model:value="{{}}"
+        required
+        clearable
+        label="商品名"
+        placeholder="请输入商品名"
+      />
+      <van-field
+        model:value="{{}}"
+        label="商品描述"
+        placeholder="请输入商品描述"
+        required
+      />
+      <van-field
+        model:value="{{}}"
+        type="number"
+        label="商品价格"
+        placeholder="请输入商品价格"
+        required
+        error-message="{{}}"
+      />
+      <van-field
+        model:value="{{}}"
+        type="number"
+        label="商品库存"
+        placeholder="请输入商品库存"
+        required
+        error-message="{{}}"
+      />
+      <van-field
+        model:value="{{}}"
+        label="商品种类"
+        placeholder="请选择商品种类"
+        required
+        error-message="{{}}"
+        readonly
+        bind:click-input="onchoose"
+      />
+      <van-popup show="{{showclass}}" bind:close="onClose" position="bottom" round  close-icon-position="top-left" custom-class="classfication">
+        <van-checkbox-group value="{{result}}" bind:change="onChange" custom-class="exbox">
+          <van-checkbox name="服饰" custom-class="inbox">服饰</van-checkbox>
+          <van-checkbox name="日用品" custom-class="inbox">日用品</van-checkbox>
+          <van-checkbox name="文具" custom-class="inbox">文具</van-checkbox>
+          <van-checkbox name="大鹅周边" custom-class="inbox">大鹅周边</van-checkbox>
+        </van-checkbox-group>
+      </van-popup>
+      <van-field
+        model:value="{{item}}"
+        label="商品规格"
+        placeholder="请输入商品规格(多种规格以/隔开)"
+        required
+        error-message="{{}}"
+      />
+</van-cell-group>
+<!-- 分隔符 -->
+<van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 12px;"
+>
+  选择商品图片
+</van-divider>
+<!-- 选择图片 -->
+      <van-uploader 
+      file-list="{{ fileList }}" 
+      multiple="true" 
+      bind:after-read="afterRead"
+      max-count="6"
+      bind:delete="deleteImage"
+
+      />
+  <!-- 提交 -->
+  <van-divider/>
+  <van-button type="primary" size="large">提交</van-button>
+</van-tab>
+</van-tabs>
+</view>

@@ -1,16 +1,90 @@
-<view class="container-detail">
-  <view class="pic-show">
-    <swiper>
-      <block>
+
+<view class="main">
+  <!-- 这是滚动展示 -->
+  <view class="swip">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
+      <block wx:for="{{4}}">
+      <navigator>
         <swiper-item>
-          <image></image>
+          <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="aspectFill"></image>
         </swiper-item>
-      </block>
+      </navigator>
+    </block>
     </swiper>
   </view>
-  
-  <view>
-    <view wx:if="{{true}}">woshi</view>
-    <view wx:if="{{false}}">kkkk</view>
+  <!-- 这是商品描述 -->
+  <view class="desc">
+    <view class="des_txt">商品描述商品描述商品描述商品描述商品描述商品描述</view>
+    <view class="price">￥99999</view>
   </view>
+  <!-- 这是cell -->
+  <van-cell-group custom-class="cellgroup">
+    <van-cell title="库存" value="20" />
+    <van-cell title="规格" value="选择规格" is-link bind:click="onclick"/>
+    <van-popup
+      show="{{show}}"
+      round
+      position="bottom"
+      custom-style="height: 80%"
+      bind:close="onClose"
+      closeable
+      close-icon="close"
+    >
+    <view class="pop">
+      <view class="head">
+        <!-- 头部展示图片 -->
+        <van-card
+          num="20"
+          tag="NEW"
+          origin-price="15"
+          price="10.00"
+          desc="描述信息"
+          title="商品标题"
+          thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+          thumb-mode="aspectFill"
+        >
+        </van-card>
+      </view>
+      <van-divider contentPosition="center" textColor="#1989fa">选择规格</van-divider>
+      <view class="size">
+        <block wx:for="{{5}}" bindtap="ontap">
+          <view class="item">黑猫警长限定款</view>
+        </block>
+      </view>
+      <van-divider contentPosition="center" textColor="#1989fa">选择数量</van-divider>
+      <view class="number">
+        <view class="tn">购买数量</view>
+        <van-stepper value="{{1}}" bind:change="onChange" custom-class="step"/>
+      </view>
+      <van-goods-action>
+        <van-goods-action-button text="加入购物车" type="warning" />
+        <van-goods-action-button text="立即购买" />
+      </van-goods-action>
+    </view>
+    </van-popup>
+    <van-cell title="运费" value="免运费" />
+    <van-cell title="服务"  label="七天包换"  is-link/>
+  </van-cell-group>
+  <!-- 商品评价 -->
+    <van-cell custom-class="comment" is-link title="商品评价" value="查看更多" bind:click="{{onComment}}"/>
+    <!-- 这是底部详情页 -->
+    <view class="buttom">
+      <view class="txt">商品详情</view>
+      <block wx:for="{{10}}">
+        <van-image
+        custom-class="des_img"
+        fit="cover"
+        src="https://img.yzcdn.cn/vant/cat.jpeg"
+        lazy-load
+      />
+      </block>
+    </view>
+    <!-- 这是底部栏 -->
+  <van-goods-action>
+    <van-goods-action-icon icon="chat-o" text="评论" dot />
+    <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+    <van-goods-action-icon icon="shop-o" text="店铺" />
+    <van-goods-action-button text="加入购物车" type="warning" />
+    <van-goods-action-button text="立即购买" />
+  </van-goods-action>
 </view>

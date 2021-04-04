@@ -1,0 +1,22 @@
+<!--pages/Shopapply/shopapply.wxml-->
+<view class="container">
+  <view class="shopinfor">
+    <text class="shop-motto">欢迎成为商户</text>
+    手机号:
+    <input bindinput="shopNameInput" type="text" placeholder="请输入店铺名称"/>
+     密码:
+    <input bindinput="EventHandle" type="text" placeholder="请设置店铺标签"/>
+     编辑店铺信息:
+    <input bindinput="shopinformation" type="text" placeholder="请密码保持一致"/>
+    选择头像：
+    <button bindtap="register">提交申请</button>
+  </view>
+
+
+
+</view>
+店铺名：
+店铺标签：tip
+实名认证
+  
+

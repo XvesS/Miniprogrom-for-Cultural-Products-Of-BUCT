@@ -5,9 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    /*navs: [
+      {
+        image: '../../image/payicon.png',
+        text: '待付款'
+      }, {
+        image: '../../image/caricon.jpg',
+        text: '待发货'
+      }, {
+        image: '../../images/caricon.jpg',
+        text: '待收货'
+      }, {
+        image: '../../image/remarkicon.jpg',
+        text: '待评价'
+      }
+    ],*/
+    
 
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

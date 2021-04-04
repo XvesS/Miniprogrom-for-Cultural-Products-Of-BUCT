@@ -1,0 +1,23 @@
+<view class="main">
+  <van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 10px;"
+  >
+   管理员
+  </van-divider>
+  <scroll-view class="zhanshi" scroll-y="true" scroll-top>
+        <block wx:for="{{10}}">
+        <van-swipe-cell  name="jjj" right-width="{{65}}" async-close bind:close="onClose">
+          <van-card thumb="https://img.yzcdn.cn/vant/cat.jpeg" thumb-mode="aspectFill">
+            <view slot="title" class="tlt">张三</view>
+            <view slot="desc" class="des">帅的人运气都不会差</view>
+            <view slot="tags" class="tags">管理员</view>
+          </van-card>
+          <view slot="right">删除</view>
+        </van-swipe-cell>
+      </block>
+  </scroll-view>
+  <van-goods-action>
+    <van-goods-action-button text="添加管理员" bind:click="onClickButton" />
+  </van-goods-action>
+</view>

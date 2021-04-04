@@ -1,0 +1,39 @@
+<!--pages/manager/manager.wxml-->
+<view class= "contasiner">
+<!--上部信息-->
+<view class="header" catchtap="mimeinfo">
+    <view class="pic">
+      <image class="userinfo-avatar" src="../../images/touxiang.jfif" background-size="cover"></image>
+    </view>
+    <view class="user-info flex-item">
+      <navigator url="../../pages/loge/loge">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="edit">登录</text>
+    </navigator>
+    </view>
+  </view>
+<view class="text2">
+  <text>管理员权限</text>
+</view>
+<navigator url="../../pages/addmanager/addmanager">
+ <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">添加管理员</text>
+        <text class="b-right"> > </text>
+      </button>
+    </navigator>
+<navigator url="../../pages/shopmanage/shopmanage">
+<button type="defaule" bindtap="clickButton2" class="mybotton">
+   <text class="b-text">店铺管理</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+<navigator url="../../pages/conmanage/conmanage">
+      <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">稿件管理</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+
+   
+      
+</view>

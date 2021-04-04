@@ -1,0 +1,58 @@
+<!--pages/merchant/merchant.wxml-->
+<view class= "contasiner">
+<!--上部信息-->
+<view class="header" catchtap="mimeinfo">
+    <view class="pic">
+      <image class="userinfo-avatar" src="../../images/touxiang.jfif" background-size="cover"></image>
+    </view>
+    <view class="user-info flex-item">
+      <navigator url="../../pages/loge/loge">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="edit">登录</text>
+    </navigator>
+    </view>
+  </view>
+
+
+<view class="text2">
+  <text>我的服务</text>
+</view>
+<navigator url="../../pages/myshop/myshop">
+      <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">我的店铺</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+<navigator url="../../pages/adress/adress">
+ <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">编辑资料</text>
+        <text class="b-right"> > </text>
+      </button>
+    </navigator>
+<navigator url="../../pages/adress/adress">
+<button type="defaule" bindtap="clickButton2" class="mybotton">
+   <text class="b-text">地址管理</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+<navigator url="../../pages/Shopapply/shopapply">
+      <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">店铺申请</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+<navigator url="../../pages/collect/collect">
+      <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">我的收藏</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+<navigator url="../../pages/contribution/contribution">
+      <button type="defaule" bindtap="clickButton1"  class="mybotton">
+   <text class="b-text">我的投稿</text>
+        <text class="b-right"> > </text>
+      </button>
+</navigator>
+
+      
+</view>
