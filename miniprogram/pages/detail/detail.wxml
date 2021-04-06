@@ -3,10 +3,10 @@
   <!-- 这是滚动展示 -->
   <view class="swip">
     <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
-      <block wx:for="{{4}}">
+      <block wx:for="{{products_data.products_pic}}">
       <navigator>
         <swiper-item>
-          <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="aspectFill"></image>
+          <image src="{{item}}" mode="aspectFill"></image>
         </swiper-item>
       </navigator>
     </block>
@@ -14,12 +14,12 @@
   </view>
   <!-- 这是商品描述 -->
   <view class="desc">
-    <view class="des_txt">商品描述商品描述商品描述商品描述商品描述商品描述</view>
-    <view class="price">￥99999</view>
+    <view class="des_txt">{{products_data.products_describe}}</view>
+    <view class="price">￥{{products_data.products_price}}</view>
   </view>
   <!-- 这是cell -->
   <van-cell-group custom-class="cellgroup">
-    <van-cell title="库存" value="20" />
+    <van-cell title="库存" value="{{products_data.products_num}}" />
     <van-cell title="规格" value="选择规格" is-link bind:click="onclick"/>
     <van-popup
       show="{{show}}"
@@ -40,7 +40,7 @@
           price="10.00"
           desc="描述信息"
           title="商品标题"
-          thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+          thumb="{{products_data.products_pic[0]}}"
           thumb-mode="aspectFill"
         >
         </van-card>
