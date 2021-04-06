@@ -40,7 +40,7 @@
           price="10.00"
           desc="描述信息"
           title="商品标题"
-          thumb="{{products_data.products_pic[0]}}"
+          thumb="{{products_data.products_pic}}"
           thumb-mode="aspectFill"
         >
         </van-card>

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    show:false
+    show:false,
+    products_data:''
   },
   onClose(){
     this.setData({
@@ -22,7 +23,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    var data=JSON.parse(options.data);
+    //console.log(data);
+    this.setData({
+      products_data:data,
+    })
   },
 
   /**

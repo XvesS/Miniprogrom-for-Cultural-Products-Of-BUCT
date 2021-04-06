@@ -26,7 +26,7 @@
     "pages/loge/loge",
     "pages/changeadress/changeadress",
     "pages/myshop/myshop",
-    "pages/charge/charge"
+    "pages/charge/charge",
     "pages/editproduct/editproduct",
     "pages/admin/admin",
     "pages/Addadmin/Addadmin",
