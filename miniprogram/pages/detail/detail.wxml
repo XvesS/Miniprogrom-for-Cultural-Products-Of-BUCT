@@ -34,21 +34,21 @@
       <view class="head">
         <!-- 头部展示图片 -->
         <van-card
-          num="20"
+          num="{{typedata.num}}"
           tag="NEW"
-          origin-price="15"
-          price="10.00"
-          desc="描述信息"
-          title="商品标题"
-          thumb="{{products_data.products_pic}}"
+          origin-price="{{products_data.products_price+5}}"
+          price="{{products_data.products_price}}"
+          desc="{{products_data.products_describe}}"
+          title="{{products_data.products_name}}"
+          thumb="{{typedata.pic}}"
           thumb-mode="aspectFill"
         >
         </van-card>
       </view>
       <van-divider contentPosition="center" textColor="#1989fa">选择规格</van-divider>
       <view class="size">
-        <block wx:for="{{5}}" bindtap="ontap">
-          <view class="item">黑猫警长限定款</view>
+        <block wx:for="{{products_data.products_specification}}">
+          <view class="item" data-index="{{index}}" bindtap="ontap">{{item.type}}</view>
         </block>
       </view>
       <van-divider contentPosition="center" textColor="#1989fa">选择数量</van-divider>
@@ -70,11 +70,11 @@
     <!-- 这是底部详情页 -->
     <view class="buttom">
       <view class="txt">商品详情</view>
-      <block wx:for="{{10}}">
+      <block >
         <van-image
         custom-class="des_img"
         fit="cover"
-        src="https://img.yzcdn.cn/vant/cat.jpeg"
+        src="{{products_data.products_pic}}"
         lazy-load
       />
       </block>

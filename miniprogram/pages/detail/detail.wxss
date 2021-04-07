@@ -100,7 +100,7 @@ page{
   padding-top: 10rpx;
 }
 .tn{
-  margin-left: 3vw;
+  margin-left: 2vw;
 }
 .step{
   margin-left: 55vw;
