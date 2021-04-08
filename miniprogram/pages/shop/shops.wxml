@@ -1,44 +1,45 @@
 <view class="main">
-  <van-tabs active="{{2}}" bind:change="onChange" sticky>
+  <van-tabs active="{{active}}" bind:change="onChange" sticky>
   <van-tab title="已上架" dot>
-    <block wx:for="{{10}}">
+    <view wx:for="{{productsData}}" class="ext" wx:if="{{item.products_status}}" data-isedit="false" data-index="{{index}}" bindtap="toproDetail">
       <van-card
-        num="20"
+        num="{{item.products_num}}"
         tag="NEW"
-        origin-price="18"
-        price="10.00"
-        desc="黑猫警长特别版"
-        title="小黑"
-        thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+        origin-price="{{item.products_price+10}}"
+        price="{{item.products_price}}"
+        desc="{{item.products_describe}}"
+        title="{{item.products_name}}"
+        thumb="{{item.products_pic[0]}}"
         thumb-mode="aspectFill"
         lazy-load
         >
         <view slot="tags" class="insert">
-          <view>黑白</view>
-          <view>可爱</view>
+          <view wx:for="{{item.products_specification}}">{{item.type}}</view>
+          <!-- <view>可爱</view> -->
         </view>
       </van-card>
-    </block>
+    </view>
   </van-tab>
   <van-tab title="已下架">
-    <block wx:for="{{10}}">
+    
+    <view wx:for="{{productsData}}" class="ext" wx:if="{{!item.products_status}}" data-isedit="true" data-index="{{index}}" bindtap="toproDetail">
       <van-card
-        num="20"
+        num="{{item.products_num}}"
         tag="NEW"
-        origin-price="18"
-        price="10.00"
-        desc="黑猫警长特别版"
-        title="小黑"
-        thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+        origin-price="{{item.products_price+10}}"
+        price="{{item.products_price}}"
+        desc="{{item.products_describe}}"
+        title="{{item.products_name}}"
+        thumb="{{item.products_pic[0]}}"
         thumb-mode="aspectFill"
         lazy-load
         >
         <view slot="tags" class="insert">
-          <view>黑白</view>
-          <view>可爱</view>
+          <view wx:for="{{item.products_specification}}">{{item.type}}</view>
+          <!-- <view>可爱</view> -->
         </view>
       </van-card>
-    </block>
+    </view>
   </van-tab>
   <van-tab title="上新">
     <van-cell-group>

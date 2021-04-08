@@ -1,13 +1,14 @@
 // pages/editproduct/editproduct.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     showpop:false,
     isdisable:true,
-    info:"修改"
+    info:"修改",
+    /****/
+    productsData:''
   },
 clikthis(){
 this.setData({
@@ -34,9 +35,11 @@ onClose(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var data = JSON.parse(options.productsData);
+    this.setData({
+      productsData:data
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

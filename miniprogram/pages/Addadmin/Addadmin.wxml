@@ -3,14 +3,23 @@
   placeholder="请输入用户名"
   show-action
   bind:search="onSearch"
+  bind:cancel="onCancel"
 />
 <view class="show">
+  <view wx:if="{{searchData.length==0}}">
+    <van-empty>
+    <image slot="image" src="cloud://bhwc-7g15kpno7c4536bb.6268-bhwc-7g15kpno7c4536bb-1305139161/tempPic/查找失败.png" class="icon" mode="aspectFill"/>
+    </van-empty>
+  </view>
   <van-cell-group>
-    <van-cell wx:for="{{10}}" data-index="{{index}}" bind:click="clickthis">
-      <van-image slot="icon" src="https://img.yzcdn.cn/vant/cat.jpeg" height="70rpx" width="70rpx" fit="cover" round/>
-      <view slot="title" class="st">张山</view>
-      <view solt="right-icon">+</view>
+    <van-cell wx:for="{{searchData}}" data-index="{{index}}" bind:click="clickthis">
+      <van-image slot="icon" src="{{item.user_headpic}}" height="70rpx" width="70rpx" fit="cover" round/>
+      <view slot="title" class="st">
+        <view class="name">{{item.user_name}}</view>
+        <view class="status">{{item.user_status}}</view>
+      </view>
     </van-cell>
 </van-cell-group>
 </view>
+
 

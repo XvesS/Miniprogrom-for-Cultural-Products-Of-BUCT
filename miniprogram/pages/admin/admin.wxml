@@ -6,16 +6,16 @@
    管理员
   </van-divider>
   <scroll-view class="zhanshi" scroll-y="true" scroll-top>
-        <block wx:for="{{10}}">
-        <van-swipe-cell  name="jjj" right-width="{{65}}" async-close bind:close="onClose">
-          <van-card thumb="https://img.yzcdn.cn/vant/cat.jpeg" thumb-mode="aspectFill">
-            <view slot="title" class="tlt">张三</view>
-            <view slot="desc" class="des">帅的人运气都不会差</view>
-            <view slot="tags" class="tags">管理员</view>
+        <navigator wx:for="{{admindata}}">
+        <van-swipe-cell  data-index="{{index}}" right-width="65" async-close bind:close="onClose">
+          <van-card thumb="{{item.user_headpic}}" thumb-mode="aspectFill">
+            <view slot="title" class="tlt">{{item.user_name}}</view>
+            <view slot="desc" class="des">{{item.user_describe}}</view>
+            <view slot="tags" class="tags">{{item.user_status}}</view>
           </van-card>
           <view slot="right">删除</view>
         </van-swipe-cell>
-      </block>
+      </navigator>
   </scroll-view>
   <van-goods-action>
     <van-goods-action-button text="添加管理员" bind:click="onClickButton" />
