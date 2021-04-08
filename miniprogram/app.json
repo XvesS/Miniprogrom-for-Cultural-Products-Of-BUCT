@@ -40,37 +40,37 @@
     "navigationBarTitleText": "北化文创平台",
     "navigationBarTextStyle": "black"
   },
-  "tabBar":{
-    "color":"#707070",
-    "selectedColor":"#1296db",
-    "list":[
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#1296db",
+    "list": [
       {
-        "pagePath":"pages/index/index",
-        "text":"首页",
-        "iconPath":"images/home.png",
-        "selectedIconPath":"images/home_h.png"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_h.png"
       },
       {
-        "pagePath":"pages/catagory/catagory",
-        "text":"分类",
-        "iconPath":"images/products.png",
-        "selectedIconPath":"images/products_h.png"
+        "pagePath": "pages/catagory/catagory",
+        "text": "分类",
+        "iconPath": "images/products.png",
+        "selectedIconPath": "images/products_h.png"
       },
       {
-        "pagePath":"pages/shopcar/shopcar",
-        "text":"购物车",
-        "iconPath":"images/shopcar.png",
-        "selectedIconPath":"images/shopcar_h.png"
+        "pagePath": "pages/shopcar/shopcar",
+        "text": "购物车",
+        "iconPath": "images/shopcar.png",
+        "selectedIconPath": "images/shopcar_h.png"
       },
       {
-        "pagePath":"pages/user/user",
-        "text":"我的",
-        "iconPath":"images/user.png",
-        "selectedIconPath":"images/user_h.png"
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_h.png"
       }
     ]
   },
-  "useExtendedLib":{
+  "useExtendedLib": {
     "weui": true
   },
   "sitemapLocation": "sitemap.json",
