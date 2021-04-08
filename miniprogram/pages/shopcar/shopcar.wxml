@@ -1,5 +1,4 @@
 <!--pages/shopcart/shopcart.wxml-->
-
 <!--购物车商品列表-->
 <view class="container">
 <view wx:for="{{cartShopList}}">
@@ -42,3 +41,14 @@
     </view>
   </view>
 </view>
+
+<!--底部工具栏-->
+<view class=.'footer_tool'>
+<view bindtap="bindSelectAll">
+        <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20"/>
+        <icon wx:else type="circle" size="20" />
+        <text>全选{{total}}</text>
+    </view>
+    <view class="button">立即结算</view>
+</view>
+

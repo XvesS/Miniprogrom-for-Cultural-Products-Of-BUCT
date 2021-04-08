@@ -1,22 +1,44 @@
 <!--pages/Shopapply/shopapply.wxml-->
 <view class="container">
+  <view class="button1">
+    <button class="button2" catchtab="button1">申请店铺</button>
+    <button class="button2" catchtab="button2">申请历史</button>
+  </view>
   <view class="shopinfor">
-    <text class="shop-motto">欢迎成为商户</text>
-    手机号:
+    <text class="shop-motto">请填写店铺基本信息</text>
+    店铺名:
     <input bindinput="shopNameInput" type="text" placeholder="请输入店铺名称"/>
-     密码:
-    <input bindinput="EventHandle" type="text" placeholder="请设置店铺标签"/>
-     编辑店铺信息:
-    <input bindinput="shopinformation" type="text" placeholder="请密码保持一致"/>
-    选择头像：
-    <button bindtap="register">提交申请</button>
+    联系电话:
+    <input bindinput="shopNumberInput" type="text" placeholder="请输入店铺联系电话"/>
+     店铺标签:
+    <input bindinput="shopTipInput" type="text" placeholder="请设置店铺标签"/>
+    店铺头像:
+  
+    <button bindtap="register" class="button">提交申请</button>
+  </view>
+<view class="apply">
+  <text class="text1">申请历史</text>
+      <view wx:for="{{shopapply}}" class="box">
+      <view class="order-list" data-item-index = "{{index}}" catchtap = "onItemClick"
+      data-id = "{{item.shopId}}">
+        <view class="order-info">
+        <text class="text">店铺申请日期:{{item.applyTime}}</text>
+        </view>
+        <view class="content">
+            <image class="contribution-img" src="{{item.shopImg}}"></image>
+            <view class="pro-detail">
+          <view class="pro-name">
+            <text class="pro-goodname text-overflow">{{item.shopTitle}}</text>
+          </view>
+          <view class="pro-desc text-overflow">{{item.shopTip}}</view>
+        </view>
+        <view class="del" catchtap="canclecontri" data-id="{{item.shopId}}">删除</view>
+      </view>
   </view>
 
+  </view><view class="add">暂无更多申请历史~</view></view></view>
 
 
-</view>
-店铺名：
-店铺标签：tip
-实名认证
+
   
 

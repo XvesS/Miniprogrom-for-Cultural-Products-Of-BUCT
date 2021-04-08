@@ -8,7 +8,7 @@
     "pages/login/login",
     "pages/order/order",
     "pages/adress/adress",
-    "pages/shop/shops",
+    "pages/shop/shop",
     "pages/draft/draft",
     "pages/search/search",
     "pages/goodlist/goodlist",
@@ -26,7 +26,15 @@
     "pages/loge/loge",
     "pages/changeadress/changeadress",
     "pages/myshop/myshop",
-    "pages/charge/charge"
+    "pages/charge/charge",
+    "pages/adress-add/adress-add",
+    "pages/contri/contri",
+    "pages/result/result",
+    "pages/productlist/productlist",
+    "pages/shopcontent/shopcontent"
+
+  
+    
   ],
   "window": {
     "backgroundColor": "#DADCDB",

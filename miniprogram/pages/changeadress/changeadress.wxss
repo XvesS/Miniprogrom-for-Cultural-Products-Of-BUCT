@@ -1,7 +1,44 @@
 /* pages/changeadress/changeadress.wxss */
-.address-phonenum{
-  text-align: right;
+.hidden {
+  display: none;
 }
-.defult-address{
-color: orangered;
+.container{
+  width: 100%;
+
+}
+.edit{
+    font-size: 28rpx;
+     position: absolute;
+     bottom: 0.1rem;
+     right: 2rem;
+
+}
+.delete{
+    margin-bottom: 0%;
+     font-size: 28rpx;
+     float: right;
+ 
+}
+.address {
+ /* border:1px solid rgb(209, 126, 58);*/
+  width: 100%;
+  padding-top: 0.1rem;
+  padding-bottom: 3rem;
+  height:40px;
+}
+.btnBox {
+  background-color:rgb(247, 227, 117);
+  margin-left:39%;
+  margin-top: 230rpx; 
+  width: 23%;
+  align-items: center;
+  justify-content: center;  
+}
+.tel{
+  color:rgba(122, 120, 115, 0.911);
+  font-size:30rpx;
+}
+.addr{
+  font-size:35rpx;
+  margin-bottom: 0px;
 }

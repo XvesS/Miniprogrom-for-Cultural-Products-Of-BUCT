@@ -1,1 +1,92 @@
 /* pages/collect/collect.wxss */
+.section{
+	font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+}
+
+.order-list{
+  /*border:1px solid red;*/
+	background: #fff;
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 0px solid #e3e3e3;
+	margin-top: 10rpx;
+}
+.order-info{
+	position: relative;
+	padding: 13rpx 34rpx 13rpx 32rpx;
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+
+.order-state{
+	font-size: 28rpx;
+	position: absolute;
+	right: 34rpx;
+	top: 35rpx;
+}
+
+
+.pro-info{
+  /*border:1px solid red;*/
+	position: relative;
+	padding: 13rpx 34rpx 13rpx 32rpx;
+	background-color: #fff;
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 0px solid #e3e3e3;
+}
+
+.pro-info image{
+	width: 227rpx;
+	height: 216rpx;
+	vertical-align: top;
+}
+
+.pro-detail{
+  /*border:1px solid rgb(180, 218, 44);*/
+	position: absolute;
+	top: 37rpx;
+	left: 278rpx;
+	font-size: 30rpx;
+}
+
+.pro-name{
+	font-size: 34rpx;
+	font-weight: 500;
+	width: 445rpx;
+	position: relative;
+}
+
+.pro-desc{
+	margin-top: 21rpx;
+	font-size: 26rpx;
+	width: 445rpx;
+}
+
+
+.pro-price{
+	position: absolute;
+	right: 0;
+}
+
+.hidden{
+	display: none;
+}
+
+.pro-goodname{
+	width: 320rpx;
+	display: inline-block;
+}
+.del{
+   font-size: 28rpx;
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.4rem;
+}
+.none{
+  height: 130rpx;
+}
+.text{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 35rpx;
+}

@@ -1,75 +1,169 @@
 /* pages/shopcart/shopcart.wxss */
-.cart-phonenum{
-  text-align: right;
+.section{
+	font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
 }
 
-.coupons {
-  box-sizing: border-box;
+.order-list{
+  /*border:1px solid red;*/
+	background: #fff;
+	border-top: 0px solid #e3e3e3;
+	border-bottom: 0px solid #e3e3e3;
+	margin-top: 10rpx;
 }
 
-.user-coupons-text {
-  color: red;
-  text-align: right;
+.order-state{
+	font-size: 28rpx;
+	position: absolute;
+	right: 34rpx;
+	top: 35rpx;
 }
 
-.cart-shop-list {
-  margin-bottom: 200rpx;
+
+.pro-info{
+  /*border:1px solid red;*/
+	position: relative;
+	padding: 13rpx 34rpx 13rpx 32rpx;
+	background-color: #fff;
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 0px solid #e3e3e3;
 }
 
-.cart-shop-img {
-  width: 200rpx;
-  height: 200rpx;
+.pro-info image{
+	width: 227rpx;
+	height: 216rpx;
+	vertical-align: top;
 }
 
-.cart-shop-title {
-  font-size: 24rpx;
-  font-weight: bold;
+.pro-detail{
+  /*border:1px solid rgb(180, 218, 44);*/
+	position: absolute;
+	top: 37rpx;
+	left: 278rpx;
+	font-size: 30rpx;
 }
-.cart-shop-select-info{
-  font-size: 24rpx;
-  color: darkgray;
+
+.pro-name{
+	font-size: 34rpx;
+	font-weight: 500;
+	width: 445rpx;
+	position: relative;
 }
-.cart-shop-price{
-  font-size: 24rpx;
-  color: red;
+
+.pro-desc{
+	margin-top: 21rpx;
+	font-size: 26rpx;
+	width: 445rpx;
 }
-.cart-count-option{
-    font-size: 24rpx;
-    border:  darkgray solid 1rpx;
-    padding-left: 10rpx;
-    padding-right: 10rpx;
+
+
+.pro-price{
+	position: absolute;
+	right: 0;
+}
+
+.hidden{
+	display: none;
+}
+
+.pro-goodname{
+	width: 320rpx;
+	display: inline-block;
+}
+.del{
+   font-size: 28rpx;
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.4rem;
+}
+.quantity{
+  border:1px solid red; 
+  position: absolute;
+  left:280rpx;
+  bottom: 20rpx;
+  height: 50rpx;
+  width: 180rpx;
+  border: 1px solid #D6D6D6;
+  border-radius: 0.1rem;
+  display: flex;
+}
+.btn-sub{
+  /*border:1px solid red;*/
+  width: 30%;
+  height: 100%;
+  display: flex;
+   align-items: center; 
+  justify-content: center; 
+  border-left-style: 1px solid #D6D6D6;
 
 }
 
-.bottom-pay {
-  position: fixed;
-  bottom: 0;
+
+.count{
+ /* border:1px solid rgb(69, 43, 212);*/
+  width: 40%;
+  display: flex;
+   align-items: center; 
+  justify-content: center; 
+}
+.btn-add{
+  /*border:1px solid rgb(58, 206, 44);*/
+  width: 30%;
+  height: 100%;
+  display: flex;
+   align-items: center; 
+  justify-content: center; 
+  border-left-style: 1px solid #D6D6D6;
+  border-right-style: 1px solid #D6D6D6;
+}
+.list{
   width: 100%;
-}
+  height: 130rpx;
 
-.total-count-money {
-  padding: 20rpx;
-  background-color: #f2f2f2;
-  font-size: 30rpx;
 }
-.line1{
-height:30px;
+.balance {
+  position: fixed;
+  bottom: 1.875rpx;
+  width: 100%;
+  height: 120rpx;
+  background: #FCFCFC;
+  box-shadow: 1px 0 20px 1px #F0F0F0;
+  padding: 0 28.125rpx;
+  font-size: 28.125rpx;
+  box-sizing:border-box;
 }
-.line2{
-  height:36px;
+.sum{
+  display: inline-block;
+  float: right;
+  margin-right: 1rem;
+  color: red;
 }
-.checkbox-box{
-  width: 80rpx;
-  height: 80rpx;
-  line-height: 80rpx;
+.balance .hint {
+  color: #A0A0A0;
+  font-size: 0.55rem;
   text-align: right;
-  box-sizing: border-box;
+  margin-right: 1rem;
 }
 .button{
-height:30px;
-margin-inline-start: 300rpx;
+  width: 3.9rem;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+  text-align: center;
+  margin-top: 0.45rem;
+  padding: 0;
+  border-radius: .25rem;
+  background-color: #fc3151;
+  color: white;
+  font-size: .85rem;
+  border: none;
+  outline: none;
 }
-.text{
-  background-color:rgb(221, 214, 214);
+.price {
+  position: absolute;
+  top: 50rpx;
+  left: 50rpx;
+  
+  text-align: right;
+  line-height: 0.65rem;
+  padding-right: 0.4rem;
 }
-

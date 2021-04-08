@@ -19,25 +19,25 @@
   <text>我的订单</text>
 </view>
     <view class="weui-media-box weui-media-box_appmsg order">
-      <navigator url="../../pages/order/order" class="order-item">
+      <navigator url="../productlist/productlist" class="order-item">
         <view class="order-item-icon">
           <image class="order-item-icon-image"  />
         </view>
         待付款
       </navigator>
-      <navigator url="../../pages/order/order" class="order-item">
+      <navigator url="../productlist/productlist" class="order-item">
         <view class="order-item-icon">
           <image class="order-item-icon-image"  />
         </view>
         待发货
       </navigator>
-      <navigator url="../../pages/order/order" class="order-item">
+      <navigator url="../productlist/productlist" class="order-item">
         <view class="order-item-icon">
           <image class="order-item-icon-image" />
         </view>
         待收货
       </navigator>
-      <navigator url="../../pages/order/order" class="order-item">
+      <navigator url="../productlist/productlist" class="order-item">
         <view class="order-item-icon">
           <image class="order-item-icon-image" />
         </view>

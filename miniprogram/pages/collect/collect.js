@@ -1,66 +1,91 @@
 // pages/collect/collect.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    curNav: "0",
+    lists: [],
+        orderList: [
+          {
+            shopImg: "../../images/cart.jpg",
+            shopTitle: "大鹅周边",
+            shopSelectInfo: "颜色分类:红色",
+            shopPrice: "9.9",
+            shopId: 1,
+          },
+          {
+            shopImg: "../../images/cart.jpg",
+            shopTitle: "文具",
+            shopSelectInfo: "颜色分类:卡黄色;尺码:均码 ",
+            shopPrice: "19.9",
+            shopId: 2,
+          },
+          {
+            shopImg: "../../images/cart.jpg",
+            shopTitle: "服饰",
+            shopSelectInfo: "颜色分类：灰色；尺码：均码",
+            shopPrice: "29.9",
+            shopId: 10,
+          },
+          {
+            shopImg: "../../images/cart.jpg",
+            shopTitle: "日用品",
+            shopSelectInfo: "颜色分类:红色;尺码:均码",
+            shopPrice: "18.00",
+            shopId: 1,
+          }
+        ],
+  },
+  onItemClick:function(e){
+
+   wx.navigateTo({
+    // url: '../detail/detail?id="shopId"',
+     url: '../detail/detail',
+     success: (result) => {},
+     fail: (res) => {},
+     complete: (res) => {},
+   })
+  },
+  switchTab: function(e) {
+  },
+  onLoad: function() {
+    this.setData({
+      curNav: 0,
+    });
+  },
+  /*onShow: function() {
+    var self = this;
+    var self  = self,
+        info  = order_detail.data;
+    info.forEach(function(value){
+      value.timer = common.formatTime(new Date(value.orderTime), "yyyy-MM-dd hh:mm");
+    });
+    self.setData({
+      order: info
+    });
+  },*/
+  getDetail: function(e) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  goPay: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  //取消收藏
+  canclecollect:function(e){
+    /*wx.showModal({
+      content: '你确定取消收藏该商品',
+      showCancel: true,
+      success: (res) => {
+        if(res.confirm == 0) {
+          return;
+        }
+       else{*/
+        var lists= this.data.orderList;
+        const index = e.currentTarget.dataset.index;
+        lists.splice(index, 1); // 删除这个商品
+        this.setData({
+          orderList: lists
+        });
+      }
+     //  }
+ // })
+//}
 })

@@ -1,1 +1,125 @@
 /* pages/charge/charge.wxss */
+.order-detail {
+  height: 100%;
+  position: relative;
+  padding-bottom: 2rpx
+}
+
+.item-list {
+  padding: 0 18.75rpx;
+  background: #fff;
+  margin-top: 23.44rpx;
+}
+.item-amount {
+  margin: 23.44rpx 0 150rpx;
+  background: #fff;
+  padding: 0rpx 18.75rpx;
+  font-size: 28.12rpx;
+}
+.item-amount view {
+  border-bottom: 1px solid #efefef;
+  padding: 35.15rpx 16.41rpx;
+}
+.item-amount text {
+  float: right;
+}
+.order-detail .boder-none {
+  border: none;
+}
+
+.btn-line {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  background: #efefef;
+  padding: 23.44rpx 0;
+  width: 100%;
+  font-size: 35.15rpx;
+  overflow: hidden;
+}
+.btn-size {
+  width: 182.80rpx;
+  float: right;
+  margin-right: 16.41rpx;
+  padding: 20rpx 15rpx;
+  font-size: 36rpx;
+  line-height: 36rpx;
+}
+.order-detail-params{
+    float: left;
+}
+
+.order-detail-price {
+    position: relative;
+    float: right;
+    width: 92rpx;
+}
+.order-detail-price text{
+    display: block;
+}
+.order-detail-price .content-amount{
+    float: left;
+    width: 92rpx;
+    text-align: center;
+}
+.item-amount .last-child {
+  border-bottom: none;
+}
+.item-amount .last-child text {
+  display: block;
+  float: none;
+  margin-bottom: 7rpx;
+}
+.colora0{
+ background-color: #efefef;
+ height: 20rpx;
+ text-align:center;
+}
+.uu{
+  background-color: #efefef;
+  height: 20rpx;
+  display:left;
+ }
+ .ii{
+   display:left;
+   
+ }
+
+.address{
+  
+}
+.wechat{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 28.125rpx;
+  background-color: #FFF;
+  margin-top: 18.75rpx;
+  font-size: 0.8rem;
+}
+
+.image{
+  border:1px solid red;
+  width: 60rpx;
+  float: left;
+  height: 60rpx;
+  margin-top:10rpx;
+}
+.wechat text{
+  text-indent: 18.75rpx;
+  display: inline-block;
+}
+.settlement button {
+  float: right;
+  background-color: #FF2D4B;
+  color: #FFF;
+  width: 185rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 0.2rem;
+  margin-top: 0.4rem;
+  border: none;
+  outline: none;
+  font-size: 23.4375rpx;
+}

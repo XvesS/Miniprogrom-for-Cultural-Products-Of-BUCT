@@ -1,41 +1,53 @@
 // pages/changeadress/changeadress.js
 Page({
   data: {
-    addressList: [],
+    loading: true,
+    lists:[],
+    addressesList:[
+      {
+        name:'1',
+        trueName:"小王",
+        mobPhone:'12300003211',
+        address:'北京市昌平区',
+        value:'小王',
+        checked: 'true'
+      },
+      {
+        name:'2',
+        trueName:"小li",
+        mobPhone:'12300333211',
+        address:'北京市昌平区',
+        value:'小li'
+      }
+    ],
+    defaultId: 0,
+    tipsData: {
+      title: ''
+    }
   },
-
-  //添加收货地址
-  addAdress: function () {
-    wx.navigateTo({
-      url: '../../pages/address/address',
-
-    })
-  },
-  //选择收货地址
-  selectOtherAddress: function (e) {
-    var selectIndex = e.currentTarget.dataset.index;
-    getApp().globalData.otherAddressInfo = this.data.addressList[selectIndex];
-    wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
-    })
-  },
-  onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数
-
-  },
-  onReady: function () {
-    // 页面渲染完成
-  },
-  onShow: function () {
-    // 页面显示
-    this.setData({
-      addressList: wx.getStorageSync('address'),
+  setDefaultStyle(list, id) {
+    list.forEach((itm) => {
+      if (itm) {
+        itm.items.is_default = +itm.address_id === id;
+        itm.items.iconType = itm.items.is_default ? 'success' : 'circle';
+        itm.items.iconColor = itm.items.iconType === 'success' ? '#FF2D4B' : '';
+      }
     });
   },
-  onHide: function () {
-    // 页面隐藏
+  goEdit(event) {
+    const id = event.target.dataset.addressId;
+    wx.navigateTo({
+      url: '../adress-add/adress-add'
+    });
   },
-  onUnload: function () {
-    // 页面关闭
-  }
+  del(event){
+    var lists= this.data.addressesList;
+    const index = e.currentTarget.dataset.index;
+    lists.splice(index, 1); 
+    this.setData({
+      addressesList: lists
+    });
+  },
+    
+  
 })

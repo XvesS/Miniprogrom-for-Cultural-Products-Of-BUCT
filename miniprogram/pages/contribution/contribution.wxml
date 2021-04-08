@@ -1,16 +1,53 @@
 <!--pages/contribution/contribution.wxml-->
 <view class="container">
-<view class="catagory-up">
+<view class="contribution-up">
     <scroll-view scroll-x="true" class="scr-box" scroll-left="{{scrollLeft}}" bindscroll="scrollMove" scroll-with-animation="true" >
         <view wx:for="{{array}}" class="scr-item-{{index==curpos?'on':''}}"id="scroll-item-{{index}}" bindtap="selectItem" data-index="{{index}}" >
       {{item.message}}
     </view>
-
     </scroll-view>
     </view>
-  </view>
+    <view class="contribution-down">
+    <scroll-view scroll-y="true" class="scr-box-d" enable-flex="true">
+        <view class="box1">
+          <text class="shop-motto">请填写投稿内容</text>
+    投稿作品名称:
+    <input bindinput="shopNameInput" type="text" placeholder="请输入作品名称"/>
+    作品简介:
+    <input bindinput="EventHandle" type="text" placeholder="请简述作品简介"/>
+    联系电话:
+    <input bindinput="shopnumberInput" type="text" placeholder="请输入联系电话"/>
+    作品图片:
+    <input bindinput="shopnumberInput" type="text" placeholder="作品"/>
+    <button bindtap="register" class="button">提交作品</button>
 
-<text>我要投稿/n投稿记录</text>
-投稿申请页面
-审核情况查询（待审核，已审核（带生产，已发售））
+
+      </view>
+    <view wx:for="{{contribution}}" class="box2">
+     <view class="order-list" data-item-index = "{{index}}" catchtap = "onItemClick"
+      data-id = "{{item.Id}}">
+      <view >
+       <view class="order-info">
+        <text class="text">投稿日期{{item.Time}}</text>
+        </view>
+        <view class="content">
+            <image class="contribution-img" src="{{item.Img}}"></image>
+            <text class="pro-price">{{item.Result}}</text>
+            <view class="pro-detail">
+          <view class="pro-name">
+            <text class="pro-goodname text-overflow">{{item.Title}}</text>
+          </view>
+          <view class="pro-desc text-overflow">{{item.Jianshu}}</view>
+        </view>
+        <view class="del" catchtap="canclecontri" data-id="{{item.Id}}">删除</view>
+      </view>
+</view></view></view>
+
+
+
+
+    
+    </scroll-view>
+  </view>
+</view>
 
