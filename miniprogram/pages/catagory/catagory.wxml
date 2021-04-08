@@ -7,14 +7,14 @@
     <view class="catagory-down">
     <scroll-view scroll-y="true" class="scr-box-d" enable-flex="true">
         <view class="pic_box" wx:for="{{catagoryProducts}}">
-        <navigator url="../detail/detail">
+        <view bindtap="set" data-it="{{item}}" class="new">
         <image mode="aspectFill" src="{{item.products_pic[0]}}"></image>
         <view class="itro">{{item.products_describe}}</view>
         <view class="bbtm">
           <view>￥{{item.products_price}}</view>
           <image src="../../images/购物车.png"/>
         </view>
-      </navigator>
+      </view>
       </view>
     </scroll-view>
     </view>

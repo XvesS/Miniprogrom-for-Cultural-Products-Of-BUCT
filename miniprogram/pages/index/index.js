@@ -3,6 +3,14 @@ Page({
     dataobj:"",
     hot:""
   },
+  set(e){
+    var data=e.currentTarget.dataset.it;
+    var str=JSON.stringify(data);
+    wx.navigateTo({
+      url: '../detail/detail?data='+str,
+    })
+
+  },
   onLoad: function (options) {
     
     wx.cloud.callFunction({

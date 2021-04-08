@@ -9,6 +9,15 @@ Page({
       pagesNum:0,
   },
 
+  set(e){
+    var data=e.currentTarget.dataset.it;
+    var str=JSON.stringify(data);
+    wx.navigateTo({
+      url: '../detail/detail?data='+str,
+    })
+
+  },
+
   getRect(ele) { 
   //获取点击元素的信息,ele为传入的id
     var that = this;

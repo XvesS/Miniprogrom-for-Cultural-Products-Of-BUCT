@@ -1,5 +1,4 @@
 {
-
   "setting": {},
   "condition": {
     "plugin": {
@@ -56,9 +55,6 @@
           "scene": null
         },
         {
-          "name": "pages/adress/adress",
-          "pathName": "pages/adress/adress",
-
           "name": "pages/shop/shops",
           "pathName": "pages/shop/shops",
           "query": "",
@@ -91,6 +87,12 @@
         {
           "name": "pages/manageDraft/manageDraft",
           "pathName": "pages/manageDraft/manageDraft",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/adress/adress",
+          "pathName": "pages/adress/adress",
           "scene": null
         }
       ]
