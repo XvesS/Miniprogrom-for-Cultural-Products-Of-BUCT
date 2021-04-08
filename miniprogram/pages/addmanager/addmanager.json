@@ -1,9 +1,0 @@
-{
-  "usingComponents": {},
-    "navigationBarBackgroundColor": "#06b3ad",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "添加管理员",
-    "backgroundColor": "#06b3ad",
-    "backgroundTextStyle": "light",
-    "enablePullDownRefresh":false
-}

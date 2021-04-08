@@ -13,6 +13,8 @@ App({
         traceUser: true,
       })
     }
-    this.globalData = {}
+    this.globalData = {
+      SurperM:['100000001','100000002','1000001']
+    }
   }
 })
