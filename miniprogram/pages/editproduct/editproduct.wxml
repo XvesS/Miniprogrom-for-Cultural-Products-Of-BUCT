@@ -1,3 +1,4 @@
+<wxs src="../tools.wxs" module="tools" />
 <view class="main">
   <!-- 图片展示 -->
   <van-divider
@@ -7,8 +8,8 @@
       商品图片
     </van-divider>
     <view class="top">
-      <view class="contain" wx:for="{{4}}">
-        <van-image width="100" height="100"  fit="cover" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+      <view class="contain" wx:for="{{productsData.products_pic}}">
+        <van-image width="100" height="100"  fit="cover" src="{{item}}" />
         <view class="dele">x</view>
       </view>
       <view class="add">+</view>
@@ -24,7 +25,7 @@
           value="{{}}"
           clearable
           label="商品名"
-          placeholder="{{}}"
+          placeholder="{{productsData.products_name}}"
           disabled="{{isdisable}}"
           >
           </van-field>
@@ -33,21 +34,21 @@
           label="商品描述"
           type="textarea"
           autosize
-          placeholder="{{}}"
+          placeholder="{{productsData.products_describe}}"
           disabled="{{isdisable}}"
         >
         </van-field>
         <van-field
           value="{{}}"
           label="商品价格"
-          placeholder="{{}}"
+          placeholder="{{productsData.products_price}}"
           disabled="{{isdisable}}"
         >
         </van-field>
         <van-field
           value="{{}}"
           label="商品库存"
-          placeholder="{{}}"
+          placeholder="{{productsData.products_num}}"
           disabled="{{isdisable}}"
         >
         </van-field>
@@ -55,7 +56,7 @@
         <van-field
           value="{{}}"
           label="商品种类"
-          placeholder="{{}}"
+          placeholder="{{tools.rtclass(productsData)}}"
           disabled="{{isdisable}}"
         >
         </van-field>
