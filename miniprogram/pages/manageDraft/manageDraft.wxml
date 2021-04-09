@@ -1,30 +1,31 @@
-<van-tabs active="{{ 0 }}" bind:change="onChange">
+<van-tabs active="{{active}}" bind:change="onChange">
   <van-tab title="稿件申请">
-    <van-card wx:for="{{3}}">
-      <van-image slot="thumb" width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg"  fit="cover" image-class="jh"/>
-      <view slot="title" class="tt">张三的提交的稿件</view>
-      <view slot="desc" class="desc">帅的人提交的稿件</view>
+    <van-card wx:for="{{draftList}}" wx:if="{{!item.draft_status}}"  data-index="{{index}}" data-from="{{1}}" bindtap="todraft">
+      <van-image slot="thumb" width="100" height="100" src="{{item.draft_pic[0]}}"  fit="cover" image-class="jh"/>
+      <view slot="title" class="tt">{{item.draft_name}}</view>
+      <view slot="desc" class="desc">{{item.draft_describe}}</view>
       <view slot="footer">
-        <van-button size="mini" type="primary">通过</van-button>
-        <van-button size="mini" type="danger">拒绝</van-button>
+        <van-button size="mini" type="primary" bindtap="pass">通过</van-button>
+        <van-button size="mini" type="danger" bindtap="refuse">拒绝</van-button>
       </view>
     </van-card>
   </van-tab>
   <van-tab title="全部稿件">
     <van-search
-      value="{{value}}"
       placeholder="请输入稿件名"
       show-action
       bind:search="onSearch"
     />
+    <view wx:for="{{searchDraft}}" data-index="{{index}}" data-from="{{2}}" bindtap="todraft">
     <van-swipe-cell  name="jjj" right-width="{{65}}" async-close bind:close="onClose">
-          <van-card thumb="https://img.yzcdn.cn/vant/cat.jpeg" thumb-mode="aspectFill">
-            <view slot="title" class="tlt">张三</view>
-            <view slot="desc" class="des">帅的人运气都不会差</view>
+          <van-card thumb="{{item.draft_pic[0]}}" thumb-mode="aspectFill">
+            <view slot="title" class="tlt">{{item.draft_name}}</view>
+            <view slot="desc" class="des">{{item.draft_describe}}</view>
             <!-- <view slot="tags" class="tags">管理员</view> -->
           </van-card>
-          <view slot="right">下架</view>
+          <view slot="right" data-index="{{index}}" bindtap="todown">下架</view>
         </van-swipe-cell>
+  </view>
   </van-tab>
 </van-tabs>
 

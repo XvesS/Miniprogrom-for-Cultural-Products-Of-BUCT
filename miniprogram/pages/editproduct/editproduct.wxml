@@ -1,3 +1,4 @@
+<wxs src="../tools.wxs" module="tools" />
 <view class="main">
   <!-- 图片展示 -->
   <van-divider
@@ -7,11 +8,11 @@
       商品图片
     </van-divider>
     <view class="top">
-      <view class="contain" wx:for="{{4}}">
-        <van-image width="100" height="100"  fit="cover" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-        <view class="dele">x</view>
+      <view class="contain" wx:for="{{productsData.products_pic}}">
+        <image class="imh" mode="aspectFill" src="{{item}}" />
+        <view class="dele" data-index="{{index}}" bindtap="delheadpic">x</view>
       </view>
-      <view class="add">+</view>
+      <view class="add" bindtap="addheadpic">+</view>
      </view>
      <van-divider
       contentPosition="center"
@@ -21,47 +22,51 @@
     </van-divider>
     <van-cell-group>
         <van-field
-          value="{{}}"
           clearable
           label="商品名"
-          placeholder="{{}}"
+          placeholder="{{productsData.products_name}}"
           disabled="{{isdisable}}"
+          data-index="{{1}}"
+          bind:input="iptfile"
           >
           </van-field>
           <van-field
-          value="{{}}"
           label="商品描述"
           type="textarea"
           autosize
-          placeholder="{{}}"
+          placeholder="{{productsData.products_describe}}"
           disabled="{{isdisable}}"
+          data-index="{{2}}"
+          bind:input="iptfile"
         >
         </van-field>
         <van-field
-          value="{{}}"
           label="商品价格"
-          placeholder="{{}}"
+          placeholder="{{productsData.products_price}}"
           disabled="{{isdisable}}"
+          data-index="{{3}}"
+          bind:input="iptfile"
         >
         </van-field>
         <van-field
-          value="{{}}"
           label="商品库存"
-          placeholder="{{}}"
+          placeholder="{{productsData.products_num}}"
           disabled="{{isdisable}}"
+          data-index="{{4}}"
+          bind:input="iptfile"
         >
         </van-field>
         
         <van-field
-          value="{{}}"
           label="商品种类"
-          placeholder="{{}}"
+          placeholder="{{tools.rtclass(productsData)}}"
           disabled="{{isdisable}}"
+          data-index="{{5}}"
+          bind:input="iptfile"
         >
         </van-field>
         
         <van-field
-          value="{{}}"
           label="商品规格"
           placeholder="点击修改"
           readonly
@@ -78,15 +83,29 @@
           custom-style="height: 60%"
           bind:close="onClose"
         >
+        <view class="head">
+        <!-- 头部展示图片 -->
+        <van-card
+          num="{{typeData.num}}"
+          tag="X"
+          origin-price="{{productsData.products_price+5}}"
+          price="{{productsData.products_price}}"
+          desc="{{productsData.products_describe}}"
+          title="{{productsData.products_name}}"
+          thumb-mode="aspectFill"
+        >
+        <image slot="thumb" src="{{typeData.pic}}" mode="aspectFill" class="im" bindtap="hitim"></image>
+        </van-card>
+      </view>
         <view class="ctn">
-          <view wx:for="{{4}}" >
-            <input type="text" placeholder="规格名"  data-index="{{index}} "bindinput="{{handleGUIge}}" class="one"/>
-            <input type="number" placeholder="库存" bindinput="{{handleGUIgenum}}" class="two"/>
+          <view wx:for="{{productsData.products_specification}}" >
+            <input type="text" placeholder="{{item.type}}"  data-index="{{index}}" bindinput="handleGUIge" class="one"/>
+            <input type="number" placeholder="{{item.num}}" data-index="{{index}}" bindinput="handleGUIgenum" class="two"/>
             <van-divider/>
           </view>
         </view>
         </van-popup>
       </van-cell-group>
       <van-button type="primary" size="primary"  custom-class="btn" bind:click="tofix">{{info}}</van-button>
-      <van-button type="primary" size="primary"  custom-class="btn">提交</van-button>
+      <van-button type="primary" size="primary"  custom-class="btn" bind:click="tosubmit">提交</van-button>
 </view>

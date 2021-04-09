@@ -1,12 +1,12 @@
 <view class="container">
   <view class="swiper">
     <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
-      <block wx:for="{{dataobj}}">
-      <navigator>
+      <block wx:for="{{dataobj}}" >
+      <view bindtap="set" data-it="{{item}}" class="new">
         <swiper-item>
           <image src="{{item.products_pic}}" mode="aspectFill"></image>
         </swiper-item>
-      </navigator>
+      </view>
     </block>
     </swiper>
   </view>
@@ -21,28 +21,28 @@
   <view class="bottom">
     <view class="rec_text">上新啦！</view>
     <view class="pic_group">
-      <view class="pic_box" wx:for="{{dataobj}}">
-        <navigator url="../detail/detail">
+      <view class="pic_box" wx:for="{{dataobj}}" >
+        <view bindtap="set" data-it="{{item}}" class="new">
         <image mode="aspectFill" src="{{item.products_pic}}"></image>
         <view  class="itro" >{{item.products_name}}</view>
         <view class="bbtm">
           <view>￥{{item.products_price}}</view>
           <image src="../../images/购物车.png"/>
         </view>
-      </navigator>
+      </view>
       </view>
     </view>
     <view class="rec_text_2">最热单品</view>
     <view class="pic_group">
       <view class="pic_box" wx:for="{{hot}}">
-        <navigator url="../detail/detail">
+        <view bindtap="set" data-it="{{item}}" class="new">
         <image mode="aspectFill" src="{{item.products_pic}}"></image>
         <view class="itro">{{item.products_name}}</view>
         <view class="bbtm">
           <view>￥{{item.products_price}}</view>
           <image src="../../images/购物车.png"/>
         </view>
-      </navigator>
+      </view>
       </view>
     </view>
   </view>

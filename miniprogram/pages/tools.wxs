@@ -1,0 +1,28 @@
+
+var rtclass=function(e){
+  var str='';
+  if(e.products_class){
+    var arr =e.products_class;
+    var len = arr.length;
+    for(var i=0;i<len;i++){
+      str = str+' '+arr[i];
+    }
+    return str;
+  }
+}
+
+var rtc=function(c){
+  var str='';
+  if(c){
+    var arr =c;
+    var len = arr.length;
+    for(var i=0;i<len;i++){
+      str = str+' '+arr[i];
+    }
+    return str;
+  }
+}
+module.exports = {
+  rtclass:rtclass,
+  rtc:rtc
+};
