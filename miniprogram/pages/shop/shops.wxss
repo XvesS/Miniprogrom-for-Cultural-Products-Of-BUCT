@@ -28,3 +28,65 @@
   /* border: 1px solid red; */
   margin-top: 10rpx;
 }
+.im{
+  width: 80px;
+  height: 80px;
+}
+.ctn view{
+  display: flex;
+  flex-direction: row;
+}
+.ctn input{
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  height: 60rpx;
+  border:1px solid black;
+  border-radius: 32rpx;
+  text-align: center;
+}
+.top{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* border:1px solid red; */
+}
+.contain{
+  /* border:1px solid red; */
+  height:100px;
+  width: 100px;
+  /* display: flex; */
+  position: relative;
+  margin-left: 3rpx;
+  margin-top: 3rpx;
+}
+.dele{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  background-color: rgb(0,0,0,0.2);
+  font-size: 20rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 30rpx;
+  top:0rpx;
+  right:0rpx;
+  border-radius: 50%;
+}
+.add{
+  height:100px;
+  width: 100px;
+  margin-left:3rpx;
+  margin-top: 3rpx;
+  box-sizing: border-box;
+  font-size: 100rpx;
+  text-align: center;
+  line-height: 100px;
+  background-color: rgb(0,0,0,0.2);
+  color: #fff;
+}
+.imh{
+  width: 100px;
+  height: 100px;
+}

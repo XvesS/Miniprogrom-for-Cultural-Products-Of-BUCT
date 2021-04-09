@@ -32,7 +32,6 @@ Page({
    */
   onLoad: function (options) {
     var data=JSON.parse(options.data);
-    //console.log(data);
     var typedata ={};
     typedata.pic = data.products_pic[0];
     this.setData({

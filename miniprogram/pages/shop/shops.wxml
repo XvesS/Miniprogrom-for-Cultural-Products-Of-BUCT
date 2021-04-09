@@ -1,7 +1,8 @@
+<wxs src="../tools.wxs" module="tools" />
 <view class="main">
   <van-tabs active="{{active}}" bind:change="onChange" sticky>
   <van-tab title="已上架" dot>
-    <view wx:for="{{productsData}}" class="ext" wx:if="{{item.products_status}}" data-isedit="false" data-index="{{index}}" bindtap="toproDetail">
+    <view wx:for="{{productsData}}" class="ext" wx:if="{{item.products_status}}" data-isedit="{{false}}" data-index="{{index}}" bindtap="toproDetail" bindlongpress="handleLongPress">
       <van-card
         num="{{item.products_num}}"
         tag="NEW"
@@ -22,7 +23,7 @@
   </van-tab>
   <van-tab title="已下架">
     
-    <view wx:for="{{productsData}}" class="ext" wx:if="{{!item.products_status}}" data-isedit="true" data-index="{{index}}" bindtap="toproDetail">
+    <view wx:for="{{productsData}}" class="ext" wx:if="{{!item.products_status}}" data-isedit="{{true}}" data-index="{{index}}" bindtap="toproDetail" bindlongpress="upShop">
       <van-card
         num="{{item.products_num}}"
         tag="NEW"
@@ -44,42 +45,43 @@
   <van-tab title="上新">
     <van-cell-group>
       <van-field
-        model:value="{{}}"
         required
         clearable
         label="商品名"
         placeholder="请输入商品名"
+        data-index="{{1}}"
+        bind:input="iptfile"
       />
       <van-field
-        model:value="{{}}"
         label="商品描述"
         placeholder="请输入商品描述"
         required
+        data-index="{{2}}"
+        bind:input="iptfile"
       />
       <van-field
-        model:value="{{}}"
         type="number"
         label="商品价格"
         placeholder="请输入商品价格"
         required
-        error-message="{{}}"
+        data-index="{{3}}"
+        bind:input="iptfile"
       />
       <van-field
-        model:value="{{}}"
         type="number"
         label="商品库存"
         placeholder="请输入商品库存"
         required
-        error-message="{{}}"
+        data-index="{{4}}"
+        bind:input="iptfile"
       />
       <van-field
-        model:value="{{}}"
         label="商品种类"
-        placeholder="请选择商品种类"
+        placeholder="{{tools.rtc(newProduct.products_class)}}"
         required
-        error-message="{{}}"
         readonly
         bind:click-input="onchoose"
+
       />
       <van-popup show="{{showclass}}" bind:close="onClose" position="bottom" round  close-icon-position="top-left" custom-class="classfication">
         <van-checkbox-group value="{{result}}" bind:change="onChange" custom-class="exbox">
@@ -90,12 +92,44 @@
         </van-checkbox-group>
       </van-popup>
       <van-field
-        model:value="{{item}}"
         label="商品规格"
-        placeholder="请输入商品规格(多种规格以/隔开)"
+        placeholder="请输入商品规格"
         required
-        error-message="{{}}"
+        bind:click-input="openpop"
       />
+      <van-popup
+          show="{{showpop}}"
+          closeable
+          round
+          title="商品规格"
+          close-icon="close"
+          position="bottom"
+          custom-style="height: 60%"
+          bind:close="clspop"
+        >
+        <view class="head">
+        <!-- 头部展示图片 -->
+        <van-card
+          num="{{newProduct.products_specification[whichType].num}}"
+          tag="X"
+          origin-price="{{newProduct.products_price+10}}"
+          price="{{newProduct.products_price}}"
+          desc="{{newProduct.products_describe}}"
+          title="{{newProduct.products_name}}"
+          thumb-mode="aspectFill"
+        >
+        <image slot="thumb" src="{{typepic}}" mode="aspectFill" class="im" bindtap="hitim"></image>
+        <van-button slot="footer" type="primary" size="small" bind:click="addtypeNum" round>添加规格</van-button>
+        </van-card>
+      </view>
+        <view class="ctn">
+          <view wx:for="{{newProduct.products_specification}}" >
+            <input type="text" placeholder="{{item.type}}"  data-index="{{index}}" class="one" bindinput="handleGUIge" bindfocus="focus"/>
+            <input type="number" placeholder="{{item.num}}" data-index="{{index}}" class="two" bindinput="handleGUIgenum"/>
+            <van-divider/>
+          </view>
+        </view>
+        </van-popup>
 </van-cell-group>
 <!-- 分隔符 -->
 <van-divider
@@ -105,17 +139,16 @@
   选择商品图片
 </van-divider>
 <!-- 选择图片 -->
-      <van-uploader 
-      file-list="{{ fileList }}" 
-      multiple="true" 
-      bind:after-read="afterRead"
-      max-count="6"
-      bind:delete="deleteImage"
-
-      />
+  <view class="top">
+      <view class="contain" wx:for="{{newProduct.products_pic}}">
+        <image class="imh" mode="aspectFill" src="{{item}}" />
+        <view class="dele" data-index="{{index}}" bindtap="delheadpic">x</view>
+      </view>
+      <view class="add" bindtap="addheadpic">+</view>
+  </view>
   <!-- 提交 -->
   <van-divider/>
-  <van-button type="primary" size="large">提交</van-button>
+  <van-button type="primary" size="large" bind:click="submit">提交</van-button>
 </van-tab>
 </van-tabs>
 </view>

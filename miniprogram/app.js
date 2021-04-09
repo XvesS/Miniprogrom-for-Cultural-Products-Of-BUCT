@@ -13,8 +13,10 @@ App({
         traceUser: true,
       })
     }
+    //应该包含userID，如果是商户应该要有shopID;
     this.globalData = {
-      SurperM:['100000001','100000002','1000001']
+      SurperM:['100000001','100000002','1000001'],
+      shopID:'b00064a7606e8a070da40b6d60c6f33b'
     }
   }
 })

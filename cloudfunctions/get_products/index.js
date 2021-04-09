@@ -6,7 +6,8 @@ const _ = db.command
 const $ = db.command.aggregate
 // 云函数入口函数
 exports.main = async (event, context) => {
-  // const userID = cloud.getWXContext().OPENID;
+  //const userID = cloud.getWXContext().OPENID;
+  //shop使用该函数
   var userID = '100009';
   var para = event.paramter;
   if(para == 1){
