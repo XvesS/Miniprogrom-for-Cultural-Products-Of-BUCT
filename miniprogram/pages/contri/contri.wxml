@@ -1,0 +1,19 @@
+<!--pages/contri/contri.wxml-->
+<view class="container-contri">
+  投稿
+  <view class="pic-show">
+    <swiper>
+      <block>
+        <swiper-item>
+          <image></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  
+  <view>
+    <view wx:if="{{true}}">woshi</view>
+    <view wx:if="{{false}}">kkkk</view>
+  </view>
+</view>
+

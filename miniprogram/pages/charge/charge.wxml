@@ -1,10 +1,32 @@
 <!--pages/charge/charge.wxml-->
 <view class="container">
+<scroll-view scroll-y="true" class="order-detail">
+  <template is="default-address" data="{{...address}}"></template>
 
+  <view class="item-amount">
+    <view>商品总额<text>￥{{allPrice}}</text></view>
+    <view class="uu">+运费<text>￥0</text></view>
+    <view>实付款(含运费)<text style="color: #ff2d4b;font-size: 35.15rpx;">￥{{allPrice}}元</text></view>
+    <view class="address" bindtap="navigateToAddress">
+      选择地址
+       
+    </view>
+ 
+    <radio-group class="pay" bindchange="radioChange">
+    支付方式
+    <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+</radio-group>  
+    <view class="ll"><text>订单编号：{{ordernumber}}</text>
+      </view>
+      <view class="ll">  <text>创建时间：{{ordertime}}</text>
+      </view>
+  </view>
 
-
-
-
-
+  <view class="btn-line" >
+    <button hover-class="none" class="btn-solid-red btn-size" catchtap="payOrder">去支付</button>
+    <button hover-class="none" class="btn-hollow-gray btn-size" catchtap="cancleOrder">取消订单</button>
+  </view>
+</scroll-view>
 </view>
-<text>pages/charge/charge.wxml</text>

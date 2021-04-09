@@ -1,3 +1,25 @@
 <!--pages/collect/collect.wxml-->
-<text>pages/collect/collect.wxml</text>
-与购物车类似
+<view class="section">
+<view wx:for="{{orderList}}">
+      <view class="order-list" data-item-index = "{{index}}" catchtap = "onItemClick"
+      data-id = "{{item.shopId}}">
+        <view class="order-info">
+          <view>收藏商品</view>
+        </view>
+        <view class="pro-info">
+            <image class="cart-shop-img" src="{{item.shopImg}}"></image>
+            <view class="pro-detail">
+          <view class="pro-name">
+            <text class="pro-goodname text-overflow">{{item.shopTitle}}</text>
+            <text class="pro-price">￥{{item.shopPrice}}</text>
+          </view>
+          <view class="pro-desc text-overflow">{{item.shopSelectInfo}}</view>
+        </view>
+        <view class="del" catchtap="canclecollect" data-id="{{item.shopId}}">删除</view>
+      </view>
+</view>
+</view>
+<view class="none">
+  <text class="text">暂无更多收藏的商品~</text>
+</view>
+</view>

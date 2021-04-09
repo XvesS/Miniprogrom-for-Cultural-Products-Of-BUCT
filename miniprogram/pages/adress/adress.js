@@ -1,7 +1,4 @@
 // pages/adress/adress.js
-var request = require('../../utils/https.js')
-var uri_save_address = 'address/api/saveAddress' //确认订单
-
 Page({
   data:{
     arrayCity:[],
@@ -128,9 +125,9 @@ Page({
             address: that.data.detailAddress,
         }, (err, res) => {
             var result = res.data;
-            if (result.result == 1) { //地址保存成功
+            if (result.result == 1) { 
             wx.navigateBack({
-                delta: 1, // 回退前 delta(默认为1) 页面
+                delta: 1, 
                 success: function(res){
                 // success
                 },

@@ -1,5 +1,4 @@
 <!--pages/shopcart/shopcart.wxml-->
-
 <!--购物车商品列表-->
 <view class="container">
 <view wx:for="{{cartShopList}}">
@@ -42,3 +41,4 @@
     </view>
   </view>
 </view>
+

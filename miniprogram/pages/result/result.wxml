@@ -1,0 +1,10 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+  <view class="one">
+    <text class="text1">订单支付成功！</text>
+  </view>
+  <view class="two">
+    <text class="text2">您可在“我的-我的订单”中查看详情</text>
+  </view>
+<button class="button" bindtap="back">完成</button>
+</view>

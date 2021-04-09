@@ -1,48 +1,25 @@
-// pages/Shopapply/shopapply.js
+// pages/result/result.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    shopapply:[
-      {shopId:'001',
-        shopName:'一号',
-        shopNumber:12300001230,
-        shopTip:'大鹅周边',
-        shopImg:'../../images/cart.jpg',
-        applyTime:'2021/03/22'
-      },
-      {shopId:'002',
-      shopName:'二号',
-      shopNumber:12300001231,
-      shopTip:'文具',
-      shopImg:'../../images/cart.jpg',
-      applyTime:'2021/03/31'
-      },
-    ]
+    orderList: [
+      {
+        shopImg: "../../images/cart.jpg",
+        shopTitle: "大鹅周边",
+        shopSelectInfo: "颜色分类:红色",
+        shopPrice: "9.9",
+        shopId: 1,
+      }
+      ]
 
   },
-  button1:function(){
-    wx.pageScrollTo({
-      scrollTop: 0
-    });
-  },
-  button2:function(){
-    wx.pageScrollTo({
-    scrollTop:200
+  back:function(){
+    wx.navigateBack({
+      delta: 1,
     })
-  },
-  register:function(){
-
-  },
-  canclecontri:function(e){
-    var lists= this.data.shopapply;
-    const index = e.currentTarget.dataset.index;
-    lists.splice(index, 1); // 删除这个商品
-    this.setData({
-      shopapply: lists
-    });
   },
 
   /**

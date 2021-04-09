@@ -1,85 +1,83 @@
 // pages/shopcart/shopcart.js
 Page({
   data: {
+    wantToDeleteItem: '',
     isHaveAddress: false,
     isHaveCoupons: false,
     addressInfo: null,
     allPrice: 0,//总共需要支付的价格
+    list:[],
+    carts:[],
     cartShopList: [
       {
         shopImg: "../../images/cart.jpg",
         shopTitle: "大鹅周边",
-        shopSelectInfo: "套餐类型:官方标配;颜色分类:",
+        shopSelectInfo: "颜色分类:红色",
         shopPrice: "9.9",
-        shopCount: 1,
+        shopId: 1,
+        shopCount:2,
       },
       {
         shopImg: "../../images/cart.jpg",
         shopTitle: "文具",
         shopSelectInfo: "颜色分类:卡黄色;尺码:均码 ",
-        shopPrice: "9.9",
-        shopCount: 2,
+        shopPrice: "19.9",
+        shopId: 2,
+        shopCount:1,
       },
       {
         shopImg: "../../images/cart.jpg",
         shopTitle: "服饰",
         shopSelectInfo: "颜色分类：灰色；尺码：均码",
         shopPrice: "29.9",
-        shopCount: 10,
+        shopId: 10,
+        shopCount:5,
       },
       {
         shopImg: "../../images/cart.jpg",
         shopTitle: "日用品",
         shopSelectInfo: "颜色分类:红色;尺码:均码",
         shopPrice: "18.00",
-        shopCount: 1,
+        shopId: 6,
+        shopCount:10,
       }
     ],
-    cartshoplist1:[
-
-    ]
-
   },
-
-  //勾选购物车商品
-  xuanze:function(e){
-
-
-
-  },
-  
-
+     
   //商品数量减少
   itemCountSub: function (e) {
-    var index = e.currentTarget.dataset.index;
     var list = this.data.cartShopList;
-    if (list[index].shopCount > 0) {
-      list[index].shopCount = --list[index].shopCount;
+    var id= e.currentTarget.dataset.id;
+    for (var key in list){
+    if(list[key].shopId ==id) {
+      if(list[key].shopCount >1){
+      list[key].shopCount=--list[key].shopCount;
+      this.setData({
+        cartShopList: list,
+      });
+    }}
+    this.allShopPrice();
+    }}
+  ,
+
+  //商品数量增加
+  itemCountAdd: function (e) {
+    var list = this.data.cartShopList;
+    var id= e.currentTarget.dataset.id;
+    for (var key in list){
+    if(list[key].shopId ==id) {
+      list[key].shopCount=++list[key].shopCount;
       this.setData({
         cartShopList: list,
       });
     }
-    //计算总价格
     this.allShopPrice();
-
-  },
-
-  //商品数量增加
-  itemCountAdd: function (e) {
-    var index = e.currentTarget.dataset.index;
-    var list = this.data.cartShopList;
-    list[index].shopCount = ++list[index].shopCount;
-
-    this.setData({
-      cartShopList: list,
-    });
-    //计算总价格
-    this.allShopPrice();
+    }
   },
 
 
-  /**
-   * 计算总价格
+  /*
+    计算总价格
    */
   allShopPrice: function () {
     var shopList = this.data.cartShopList;
@@ -91,33 +89,20 @@ Page({
       allPrice: shopPrice,
     });
   },
-
+//结算
 onItemClick : function(e){
   var index = e.currentTarget.dataset.itemIndex;
   wx.navigateTo({
       url: '../../pages/charge/charge?id=' +e.currentTarget.dataset.itemIndex,
     })
 },
-
-goToPay : function(){
-  wx.requestPayment({
-    timeStamp: 'String1',
-    nonceStr: 'String2',
-    package: 'String3',
-    signType: 'MD5',
-    paySign: 'String4',
-    success: function(res){
-      // success
-    },
-    fail: function() {
-      // fail
-    },
-    complete: function() {
-      // complete
-    }
+//跳转商品页面
+itemdetail:function(e){
+  var index = e.currentTarget.dataset.itemIndex;
+  wx.navigateTo({
+    url: '../detail/detail?id='+e.currentTarget.dataset.itemIndex,
   })
 },
-
 
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -153,7 +138,34 @@ goToPay : function(){
     //计算总价格
     this.allShopPrice();
   },
- 
+  //删除
+  canclecollect: function (e) {
+    /*wx.showModal({
+      title: '删除商品',
+      content: '是否要删除这件商品？',
+      confirmText: '删除',
+      cancelText: '取消',
+      success: function(res) {
+        if (res.confirm) {*/
+          var carts= this.data.cartShopList;
+          const index = e.currentTarget.dataset.index;
+          carts.splice(index, 1); // 删除这个商品
+          this.setData({
+          cartShopList: carts
+          });
+          /*if (!cartShopList.length) { // 为空
+          this.setData({
+          hasList: false 
+          });
+          } else { // 不为空*/
+          this.allShopPrice(); // 重新计算总价格
+          //}
+        }
+       // }
+     // })
+    //}
+    ,
+    
   onHide: function () {
     // 页面隐藏
   },

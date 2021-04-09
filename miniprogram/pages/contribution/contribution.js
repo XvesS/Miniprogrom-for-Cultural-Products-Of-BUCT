@@ -8,9 +8,33 @@ Page({
         message: '我要投稿',
       }, {
         message: '投稿记录'
-      }, {
-        message: '审核情况查询'
       }],
+      contribution:[
+        {
+          Id:'001',
+          Img:'../../images/cart.jpg',
+          Title:'1大鹅',
+          Jianshu:'1北化大鹅',
+          Time:'2020-03-20',
+          Result:'待审核',
+        },
+        {
+          Id:'002',
+          Img:'../../images/cart.jpg',
+          Title:'2大鹅',
+          Jianshu:'2北化大鹅',
+          Time:'2020-03-23',
+          Result:'审核通过（待生产）'
+        },
+        {
+          Id:'003',
+          Img:'../../images/cart.jpg',
+          Title:'3大鹅',
+          Jianshu:'3北化大鹅',
+          Time:'2020-03-18',
+          Result:'审核通过（已发售）'
+        },
+      ]
   },
   getRect(ele) { 
     //获取点击元素的信息,ele为传入的id
@@ -58,5 +82,23 @@ Page({
     onReady(){
         
     },
-  
+    canclecontri:function(e){
+          var lists= this.data.contribution;
+          const index = e.currentTarget.dataset.index;
+          lists.splice(index, 1); // 删除这个商品
+          this.setData({
+            contribution: lists
+          });
+        },
+        onItemClick:function(e){
+
+          wx.navigateTo({
+           // url: '../detail/detail?id="shopId"',
+            url: '../contri/contri',
+            success: (result) => {},
+            fail: (res) => {},
+            complete: (res) => {},
+          })
+         },
+    
   })

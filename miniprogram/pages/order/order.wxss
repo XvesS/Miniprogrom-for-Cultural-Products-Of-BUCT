@@ -1,115 +1,130 @@
 /* pages/order/order.wxss */
-page{
-  background-color: #e4e7e9;
+.hide {
+  display: none;
 }
-.container{
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  /* border:1px solid red; */
-  box-sizing: border-box;
-  flex-direction: column;
-}
-.catagory-up{
-  /* border:1px solid green; */
-  margin-top: 10rpx;
-  height: 6vh;
-  box-sizing: border-box;
-  background-color:#fff;
-}
-.catagory-down{
-  /* border: 1px solid black; */
-  height: 90vh;
-  margin-top: 6rpx;
-  background-color: rgb(248,248,248);
-}
-.scr-box{
-  /* border: 1px solid black; */
+.orders-wrap {
+  font-size: 28.12rpx;
   height: 100%;
-  width: 100%;
+}
+.orders {
+  height: 100%;
+}
+
+.nav-header {
+  font-size: 28.12rpx;
+  display: -webkit-box;
+  text-align: center;
+  background: #fff;
+  padding: 0 16.41rpx;
+  height: 100.77rpx;
+  line-height: 100.77rpx;
+}
+.nav-cell {
+  -webkit-box-flex: 1;
+}
+.nav-cell.active {
+  color: #ff4b2d;
+  border-bottom: #ff4b2d 4.69rpx solid;
+}
+
+.order-cell {
+  margin-top: 23.44rpx;
+  background: #fff;
+  padding: 0 16.41rpx;
+  overflow: hidden;
+}
+.cell-status {
+  text-align: right;
+  padding: 23.44rpx 18.74rpx;
+  color: #ff2d4b;
+}
+.cell-item {
+  padding-bottom: 35.15rpx;
+  overflow: hidden;
   white-space: nowrap;
+  width: 100%;
+  height:175.77rpx;
 }
- .scr-item-{
-  /* border: 1px solid green; */
-  box-sizing: border-box;
-  display: inline-block;
-  height: 100%;
-  width: 30vw;
-  /* margin-bottom: 2rpx; */
-  text-align: center;
-  padding-top: 1.5vh;
-  font-size: 14px;
-  /* font-weight: 600; */
-  color: #4C4C4E;
-  letter-spacing: 4rpx;
+.item-content {
+  margin-left: 212.35rpx;
+  margin-right: 17.84rpx;
+  height: 175.77rpx;
+  position: relative;
 }
-.scr-item-on{
-  box-sizing: border-box;
-  display: inline-block;
-  height: 100%;
-  width: 30vw;
-  text-align: center;
-  padding-top: 1.3vh;
-  font-size: 14px;
-  color:rgb(32, 67, 95);
-  font-weight: 600;
-  letter-spacing: 4rpx;
-  border-bottom:rgb(140, 183, 218);
-  /* border:1px solid green; */
+.content-name {
+  font-size: 23.44rpx;
+  line-height: 32.81rpx;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
-.scr-box-d{
-  /* border: 1px solid green; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-  height: 100%;
+.content-attr {
+  margin-top: 11.72rpx;
+  font-size: 23.44rpx;
+  color: #a0a0a0;
+  line-height: 32.81rpx;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
-.pic_box{
-  /* border: 1px solid green; */
-  height: 65vw;
-  width: 47vw;
-  margin-top: 16rpx;
-  margin-left: 2vw;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 16rpx;
-}
-.pic_box navigator{
-  height: 100%;
+.content-count {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
   width: 100%;
 }
-.pic_box image{
-  /* border: 1px solid red; */
-  height:65%;
+.content-amount {
+  float: right;
+}
+.cell-count {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  overflow: hidden;
+  padding: 23.44rpx 18.74rpx;
+}
+.count-amount {
+  float: left;
+}
+.count-carriage {
+  float: right;
+}
+.count-price {
+  float: right;
+  margin-left: 28.12rpx;
+  color: #ff2b4d;
+}
+.count-price::before {
+  content: "实付：";
+  color: #000;
+}
+.cell-btn {
+  padding: 17.58rpx 18.74rpx;
+  overflow: hidden;
+}
+
+.empty {
   width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 28.12rpx;
+  color: #a0a0a0;
+  line-height: 48rpx;
 }
-.itro{
-  /* border: 1px solid black; */
-  font-size: 29rpx;
-  height: 20%;
-  color: #797d7f;
-  padding-left:10rpx ;
-  line-height: 120%;
-  letter-spacing: 140%;
+.empty-img {
+  width: 187.49rpx;
+  height: 187.49rpx;
+  margin-top: 164.05rpx;
+  margin-bottom: 23.44rpx;
 }
-.bbtm{
-  display: flex;
-}
-.bbtm image{
-  height: 50rpx;
-  width: 50rpx;
-  border-radius: 50%;
-  background-color: #E8110F;
-  margin-left: 24vw;
-}
-.bbtm view{
-  margin-left: 3vw;
-  color: #E8110F;
-  font-weight: 800;
-}
-.category-item{
-  height: 50px;
-  line-height: 50px;
-  border-bottom:1px solid #ddd;
+.btn-to-home {
+  margin-top: 35.15rpx;
+  width: 337.48rpx;
+  height: 79.68rpx;
+  line-height: 79.68rpx;
+  border-radius: 11.72rpx;
+  display: inline-block;
 }
