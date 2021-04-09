@@ -1,0 +1,47 @@
+.tt{
+  /* border:1px solid red; */
+  height: 30px;
+  /* text-align: center; */
+  line-height: 30px;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  margin-top: 10rpx;
+  font-weight:600;
+}
+.desc{
+  /* border: 1px solid red; */
+  padding-left: 20rpx;
+  margin-top: 10rpx;
+}
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 110px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+.tlt{
+  /* border: 1px solid red; */
+  height:60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  font-weight: 600;
+}
+.des{
+  /* border: 1px solid red; */
+  margin-left: 10rpx;
+  margin-top: 5rpx;
+}
+.jh{
+  /* border: 1px solid red; */
+  border-radius: 32rpx;
+  margin-top: 20rpx;
+}
+.van-button{
+  margin-left: 5rpx;
+  /* border-radius: 10rpx; */
+}

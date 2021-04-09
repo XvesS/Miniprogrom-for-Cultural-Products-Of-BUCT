@@ -1,0 +1,16 @@
+<van-search
+  value="{{value}}"
+  placeholder="请输入用户名"
+  show-action
+  bind:search="onSearch"
+/>
+<view class="show">
+  <van-cell-group>
+    <van-cell wx:for="{{10}}" data-index="{{index}}" bind:click="clickthis">
+      <van-image slot="icon" src="https://img.yzcdn.cn/vant/cat.jpeg" height="70rpx" width="70rpx" fit="cover" round/>
+      <view slot="title" class="st">张山</view>
+      <view solt="right-icon">+</view>
+    </van-cell>
+</van-cell-group>
+</view>
+

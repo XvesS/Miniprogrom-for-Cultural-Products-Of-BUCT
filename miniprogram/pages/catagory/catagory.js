@@ -4,23 +4,9 @@ Page({
       moveParams: {
         scrollLeft: 0
       },//固定
-      array: [{
-        message: '大鹅周边',
-        kind:'大鹅周边'
-      }, {
-        message: '文具',
-        kind:'文具'
-      }, {
-        message: '服饰',
-        kind:'服饰'
-      }, {
-        message: '日用品',
-        kind:'日用品'
-      }],
-kind:[{
-
-  
-}]
+      catagoryTopList:['全部商品','服饰','日用品','文具','大鹅周边'],
+      catagoryProducts:[],
+      pagesNum:0,
   },
 
   getRect(ele) { 
@@ -64,8 +50,54 @@ kind:[{
       curpos:e.currentTarget.dataset.index
     })
     this.getRect('#' + ele);//以上代码不要动
-  },
 
+    this.setData({
+      pagesNum:0,
+      catagoryProducts:[]
+    })
+    wx.cloud.callFunction({
+      name:"get_productsByType",
+      data:{
+        type:this.data.catagoryTopList[e.currentTarget.dataset.index],
+        num:this.data.pagesNum*10
+      }
+    }).then(res=>{
+      var data = res.result.data;
+      this.setData({
+        catagoryProducts:data
+      })
+    })
+  },
+  onLoad(){
+    wx.cloud.callFunction({
+      name:"get_productsByType",
+      data:{
+        type:this.data.catagoryTopList[0],
+        num:this.data.pagesNum*10
+      }
+    }).then(res=>{
+      var data = res.result.data;
+      this.setData({
+        catagoryProducts:data
+      })
+    })
+  },
+  onReachBottom: function () {
+    var num = this.data.pagesNum+1;
+    this.setData({
+      pagesNum:num
+    })
+    wx.cloud.callFunction({
+      name:'get_productsByType',
+      num:num*10
+    }).then(res=>{
+      var data = res.result.data;
+      var newList = this.data.catagoryProducts.concat(data);
+      this.setData({
+        catagoryProducts:newList
+      })
+    })
+  },
   onReady(){
       
   },

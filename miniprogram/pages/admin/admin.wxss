@@ -1,0 +1,37 @@
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 110px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+.tlt{
+  /* border: 1px solid red; */
+  height:60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  font-weight: 600;
+}
+.des{
+  /* border: 1px solid red; */
+  margin-left: 10rpx;
+  margin-top: 5rpx;
+}
+.tags{
+  margin-left: 10rpx;
+  margin-top: 20rpx;
+  border: 1px solid red;
+  width: 50px;
+  text-align: center;
+  border-radius: 32rpx;
+  font-size: 10px;
+}
+.zhanshi{
+  height:90%;
+  width: 100%;
+  /* border: 1px solid red; */
+}

@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    show:false
+  },
+  onClose(){
+    this.setData({
+      show:false,
+    })
+  },
+  onclick(){
+    this.setData({
+      show:true
+    })
   },
 
   /**

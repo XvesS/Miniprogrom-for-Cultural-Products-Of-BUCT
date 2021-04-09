@@ -1,4 +1,6 @@
 {
+
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -56,6 +58,39 @@
         {
           "name": "pages/adress/adress",
           "pathName": "pages/adress/adress",
+
+          "name": "pages/shop/shops",
+          "pathName": "pages/shop/shops",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/editproduct/editproduct",
+          "pathName": "pages/editproduct/editproduct",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/admin/admin",
+          "pathName": "pages/admin/admin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Addadmin/Addadmin",
+          "pathName": "pages/Addadmin/Addadmin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/manageShop/manageShop",
+          "pathName": "pages/manageShop/manageShop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/manageDraft/manageDraft",
+          "pathName": "pages/manageDraft/manageDraft",
           "scene": null
         }
       ]

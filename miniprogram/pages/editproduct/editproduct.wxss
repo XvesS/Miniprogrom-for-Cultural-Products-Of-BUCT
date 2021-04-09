@@ -1,0 +1,65 @@
+.top{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* border:1px solid red; */
+}
+.contain{
+  /* border:1px solid red; */
+  height:100px;
+  width: 100px;
+  /* display: flex; */
+  position: relative;
+  margin-left: 3rpx;
+  margin-top: 3rpx;
+}
+.dele{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  background-color: rgb(0,0,0,0.2);
+  font-size: 20rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 30rpx;
+  top:0rpx;
+  right:0rpx;
+  border-radius: 50%;
+}
+.add{
+  height:100px;
+  width: 100px;
+  margin-left:3rpx;
+  margin-top: 3rpx;
+  box-sizing: border-box;
+  font-size: 100rpx;
+  text-align: center;
+  line-height: 100px;
+  background-color: rgb(0,0,0,0.2);
+  color: #fff;
+}
+.btn{
+  border-radius: 32rpx;
+  margin-top: 20rpx;
+  width: 60%;
+  margin-left: 20%;
+}
+.ctn{
+  margin-top: 40px;
+  width: 100%;
+  height: auto;
+}
+.ctn view{
+  display: flex;
+  flex-direction: row;
+}
+.ctn input{
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  height: 60rpx;
+  border:1px solid black;
+  border-radius: 32rpx;
+  text-align: center;
+}
