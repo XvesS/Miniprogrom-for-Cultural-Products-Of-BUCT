@@ -48,7 +48,7 @@
       <van-divider contentPosition="center" textColor="#1989fa">选择规格</van-divider>
       <view class="size">
         <block wx:for="{{products_data.products_specification}}">
-          <view class="item" data-index="{{index}}" bindtap="ontap">{{item.type}}</view>
+          <view  data-index="{{index}}" bindtap="ontap" class="item{{it==index?'-on':''}}">{{item.type}}</view>
         </block>
       </view>
       <van-divider contentPosition="center" textColor="#1989fa">选择数量</van-divider>
@@ -63,7 +63,7 @@
     </view>
     </van-popup>
     <van-cell title="运费" value="免运费" />
-    <van-cell title="服务"  label="七天包换"  is-link/>
+    <van-cell title="服务"  label="七天包换" />
   </van-cell-group>
   <!-- 商品评价 -->
     <van-cell custom-class="comment" is-link title="商品评价" value="查看更多" bind:click="{{onComment}}"/>
@@ -79,6 +79,17 @@
       />
       </block>
     </view>
+    <!-- 这是底部评价页 -->
+    <view class="buttom">
+      <view class="txt">商品评价</view>
+      <block class="shopcomment" wx:for="{{dataobj}}">
+        <view class="commentb">{{item.user_name}}</view>
+        <view class="commentc">{{item.comment_data}}</view>
+        <image  src="{{item.comment_pic}}"></image>
+        <view class="commentd">{{item.comment_content}}</view>
+      </block>
+    </view>
+    <view class="di">__</view>
     <!-- 这是底部栏 -->
   <van-goods-action>
     <van-goods-action-icon icon="chat-o" text="评论" dot />
