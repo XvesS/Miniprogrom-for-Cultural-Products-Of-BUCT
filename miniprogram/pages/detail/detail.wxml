@@ -78,7 +78,18 @@
         lazy-load
       />
       </block>
+      <!-- 这是底部评价页 -->
     </view>
+    <view class="buttom">
+      <view class="txt">商品评价</view>
+      <block class="shopcomment" wx:for="{{dataobj}}">
+        <view class="commentb">{{item.user_name}}</view>
+        <view class="commentc">{{item.comment_data}}</view>
+        <image src="{{item.comment_pic}}"></image>
+        <view class="commentd">{{item.comment_content}}</view>
+      </block>
+    </view>
+    <view class="di">__</view>
     <!-- 这是底部栏 -->
   <van-goods-action>
     <van-goods-action-icon icon="chat-o" text="评论" dot />
