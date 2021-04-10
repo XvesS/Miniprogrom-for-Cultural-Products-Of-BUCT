@@ -1,13 +1,9 @@
 <view class="container">
   <view class="swiper">
     <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" >
-      <block wx:for="{{dataobj}}" >
-      <view bindtap="set" data-it="{{item}}" class="new">
-        <swiper-item>
-          <image src="{{item.products_pic}}" mode="aspectFill"></image>
+        <swiper-item wx:for="{{pic}}" bindtap="set" data-it="{{item}}" class="new">
+          <image src="{{item}}" mode="aspectFill"></image>
         </swiper-item>
-      </view>
-    </block>
     </swiper>
   </view>
   <view class="serchbox">
@@ -23,7 +19,7 @@
     <view class="pic_group">
       <view class="pic_box" wx:for="{{dataobj}}" >
         <view bindtap="set" data-it="{{item}}" class="new">
-        <image mode="aspectFill" src="{{item.products_pic}}"></image>
+        <image mode="aspectFill" src="{{item.products_pic[0]}}"></image>
         <view  class="itro" >{{item.products_name}}</view>
         <view class="bbtm">
           <view>￥{{item.products_price}}</view>
@@ -36,7 +32,7 @@
     <view class="pic_group">
       <view class="pic_box" wx:for="{{hot}}">
         <view bindtap="set" data-it="{{item}}" class="new">
-        <image mode="aspectFill" src="{{item.products_pic}}"></image>
+        <image mode="aspectFill" src="{{item.products_pic[0]}}"></image>
         <view class="itro">{{item.products_name}}</view>
         <view class="bbtm">
           <view>￥{{item.products_price}}</view>

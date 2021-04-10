@@ -2,6 +2,11 @@ Page({
   data: {
     dataobj:"",
     hot:"",
+    pic:["../../images/1.jpg",
+          "../../images/12.jpg",
+          "../../images/2.jpg",
+          "../../images/3.jpg",
+          "../../images/4.jpg",]
   },
   set(e){
     var data=e.currentTarget.dataset.it;

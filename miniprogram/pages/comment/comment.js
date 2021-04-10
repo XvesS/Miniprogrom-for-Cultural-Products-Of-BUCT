@@ -9,6 +9,15 @@
        efficiency: true,
        environment:true,
       professional:true,
+      comment:{
+        comment_content:"",
+        comment_data:"",
+        comment_likes:"",
+        comment_pic:[],
+        pro_id:"",
+        user_id:"",
+        user_name:"",
+      },
       userStars: [
         "../../images/star.png",
         "../../images/star.png",
@@ -38,9 +47,11 @@
           tempUserStars[i] = "../../images/star2.png"
         }
       }
+      var mtlikes=comment.comment_likes;
       // 重新赋值就可以显示了
       that.setData({
-        userStars: tempUserStars
+        userStars: tempUserStars,
+        [mtlikes]:index
       })
     },
     // 标签
@@ -89,8 +100,10 @@
         //最多字数限制
         if (len > this.data.max) return;
         // 当输入框内容的长度大于最大长度限制（max)时，终止setData()的执行
-        this.setData({
-          currentWordNumber: len //当前字数  
+        var mtext = 'comment.comment_comtent';
+        that.setData({
+          currentWordNumber: len ,//当前字数  
+          [mtext]:value
         });
       },
       // 图片
@@ -107,10 +120,13 @@
          pics = pics.concat(imgsrc);
          console.log(pics);
          // console.log(imgsrc);
+         var mtpic="comment.comment_pic";
          that.setData({
            pics: pics,
            // console.log(pics),
+           [mtpic]:pics
          });
+      
        },
        //添加数据
        btnsub(res){
@@ -118,6 +134,8 @@
            title: '数据提交中...',
            mask:ture
          })
+         console.log(res)
+         var resVal=res;
          db.collection("comment").add({
             data:{
               
