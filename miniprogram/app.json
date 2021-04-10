@@ -29,7 +29,9 @@
     "pages/admin/admin",
     "pages/Addadmin/Addadmin",
     "pages/manageShop/manageShop",
-    "pages/manageDraft/manageDraft"
+    "pages/manageDraft/manageDraft",
+    "pages/comment/comment",
+    "pages/showcomment/showcomment"
   ],
   "window": {
     "backgroundColor": "#DADCDB",

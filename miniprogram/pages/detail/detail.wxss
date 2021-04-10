@@ -37,6 +37,12 @@ page{
 .comment{
   height: 7vh;
 }
+.pic_group{
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
 .buttom .txt{
   /* border:1px solid red; */
   height: 30px;
@@ -105,4 +111,51 @@ page{
 .step{
   margin-left: 55vw;
 }
-
+.shopcomment{
+  height: 100%;
+  width: 100%;
+  margin-top: 16rpx;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+.commentb{
+  /*border:1px solid red;*/
+  height: 30px;
+  font-size: middle;
+  padding-top: 13rpx;
+  margin-top: 10px;
+  background-color: #fff;
+  letter-spacing: 5rpx;
+  color: #383333;
+}
+.commentc{
+  /*border:1px solid red;*/
+  height: 20px;
+  font-size: x-small;
+  padding-top: 13rpx;
+  background-color: #fff;
+  letter-spacing: 2rpx;
+  color: #757272;
+}
+.commentd{
+  /*border:1px solid red;*/
+  height: 20px;
+  font-size: small;
+  padding-top: 13rpx;
+  background-color: #fff;
+  letter-spacing: 2rpx;
+  color: #757272;
+}
+.shopcomment image{
+  height: 5rpx;
+  width: 5rpx;
+  margin-left: 10vw;
+  
+}
+.di{
+  height:60px;
+}

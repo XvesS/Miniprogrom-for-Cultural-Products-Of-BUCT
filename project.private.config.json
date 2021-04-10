@@ -93,6 +93,13 @@
         {
           "name": "pages/adress/adress",
           "pathName": "pages/adress/adress",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/comment/comment",
+          "pathName": "pages/comment/comment",
+          "query": "",
           "scene": null
         }
       ]

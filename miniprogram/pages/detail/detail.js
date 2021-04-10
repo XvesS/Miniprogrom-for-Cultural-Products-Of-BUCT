@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+var it=-1;
 Page({
 
   /**
@@ -7,7 +8,8 @@ Page({
   data: {
     show:false,
     products_data:'',
-    typedata:''
+    typedata:'',
+    dataobj:'',
   },
   onClose(){
     this.setData({
@@ -22,6 +24,7 @@ Page({
   ontap(e){
     var index = e.currentTarget.dataset.index;
     var typedata =  this.data.products_data.products_specification[index];
+    it = index;
     this.setData({
       typedata
     })
@@ -33,13 +36,29 @@ Page({
   onLoad: function (options) {
     var data=JSON.parse(options.data);
     //console.log(data);
+    //var pro_id=data._id;
     var typedata ={};
     typedata.pic = data.products_pic[0];
     this.setData({
       products_data:data,
       typedata
     })
-  },
+
+    var ID=data.products_id;
+    console.log(ID);
+    wx.cloud.callFunction({
+      data:{
+        parameter:2,
+        pro_id:ID,
+      },
+      name:"get_products_new"
+    }).then(res=>{
+      //console.log(res)
+      this.setData({
+       dataobj:res.result.list
+      })
+  })
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

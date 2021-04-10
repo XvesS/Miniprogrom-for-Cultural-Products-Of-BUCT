@@ -7,7 +7,10 @@ const $ = db.command.aggregate;
 
 // 云函数入口函数
 exports.main = async (event, context) => {
- return await  db.collection("rec_table")
+  var para=event.parameter;
+  var id=event.pro_id;
+ if(para==1){//index
+  return await  db.collection("rec_table")
  .aggregate()
  .match({
      rec_class:'新品'
@@ -24,4 +27,24 @@ exports.main = async (event, context) => {
         result: 0
       })
     .end()
+ }
+ else if(para==2){//detial
+  return await db.collection("comment")
+  .aggregate()
+  .match({
+    pro_id:id
+  })
+  .lookup({
+    from:"products_table",
+    localField:'pro_id',
+    foreignField:'_id',
+    as:"result",
+    }).replaceRoot({
+        newRoot: $.mergeObjects([ $.arrayElemAt(['$result', 0]), '$$ROOT' ])
+      })
+      .project({
+        result: 0
+      })
+    .end()
+ }
 }
